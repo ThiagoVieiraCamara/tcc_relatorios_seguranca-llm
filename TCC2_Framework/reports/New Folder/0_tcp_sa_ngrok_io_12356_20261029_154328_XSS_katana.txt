@@ -1,0 +1,41 @@
+# Log bruto de execucao
+# Scanner: XSS
+# Ferramenta: katana
+# Alvo: http://0.tcp.sa.ngrok.io:12356
+# Data: 2026-10-29T15:44:08.317987
+======================================================================
+
+Comando: katana -u http://0.tcp.sa.ngrok.io:12356 -d 2 -jc -silent -timeout 10
+
+--- STDOUT ---
+http://0.tcp.sa.ngrok.io:12356
+http://0.tcp.sa.ngrok.io:12356/rolldown-runtime-BoHGiXSq.js
+http://0.tcp.sa.ngrok.io:12356/chunk-DBPdFzgj.js
+http://0.tcp.sa.ngrok.io:12356/scripts.js
+http://0.tcp.sa.ngrok.io:12356/polyfills.js
+http://0.tcp.sa.ngrok.io:12356/styles.css
+http://0.tcp.sa.ngrok.io:12356/chunk-1qQQGal7.js
+http://0.tcp.sa.ngrok.io:12356/Edge/
+http://0.tcp.sa.ngrok.io:12356/zone.js
+http://0.tcp.sa.ngrok.io:12356/text/
+http://0.tcp.sa.ngrok.io:12356/Trident/
+http://0.tcp.sa.ngrok.io:12356/%7B%7Bhref%7D%7D
+http://0.tcp.sa.ngrok.io:12356/Zone.js
+http://0.tcp.sa.ngrok.io:12356/main.js
+http://0.tcp.sa.ngrok.io:12356/chunk-Cv2YgWUq.js
+http://0.tcp.sa.ngrok.io:12356/faucet.module-C29hbfVs.js
+http://0.tcp.sa.ngrok.io:12356/redirect?to=http
+http://0.tcp.sa.ngrok.io:12356/coding-challenge-page.component-Sl0Kca01.js
+http://0.tcp.sa.ngrok.io:12356/application/vnd.openxmlformats-officedocument.wordprocessingml.do
+http://0.tcp.sa.ngrok.io:12356/%5C/index%5C.html
+http://0.tcp.sa.ngrok.io:12356/application/vnd.ms-word.do
+http://0.tcp.sa.ngrok.io:12356/web3-sandbox.module-BmlpKNfJ.js
+http://0.tcp.sa.ngrok.io:12356/wallet-web3.module-wTOnhm_r.js
+http://0.tcp.sa.ngrok.io:12356/about.component-CqdnxQ-q.js
+http://0.tcp.sa.ngrok.io:12356/recycle.component-BGn9yQWr.js
+http://0.tcp.sa.ngrok.io:12356/redirect?to=https
+http://0.tcp.sa.ngrok.io:12356/confetti-CBIxuiwe.js
+http://0.tcp.sa.ngrok.io:12356/hacking-instructor-Dj9tjwgl.js
+http://0.tcp.sa.ngrok.io:12356/main.js
+
+--- STDERR ---

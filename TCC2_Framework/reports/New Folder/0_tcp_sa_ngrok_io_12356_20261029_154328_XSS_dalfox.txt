@@ -1,0 +1,165 @@
+# Log bruto de execucao
+# Scanner: XSS
+# Ferramenta: dalfox
+# Alvo: http://0.tcp.sa.ngrok.io:12356
+# Data: 2026-10-29T15:44:08.318329
+======================================================================
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356 ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/rolldown-runtime-BoHGiXSq.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/chunk-DBPdFzgj.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/scripts.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/polyfills.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/styles.css ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/chunk-1qQQGal7.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/Edge/ ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/zone.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/text/ ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/Trident/ ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/%7B%7Bhref%7D%7D ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/Zone.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/main.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/chunk-Cv2YgWUq.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/faucet.module-C29hbfVs.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/redirect?to=http ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/coding-challenge-page.component-Sl0Kca01.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/application/vnd.openxmlformats-officedocument.wordprocessingml.do ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://0.tcp.sa.ngrok.io:12356/%5C/index%5C.html ---
+STDOUT: [
+{}]
+
+STDERR: 

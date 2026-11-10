@@ -1,0 +1,13 @@
+# Log bruto de execucao
+# Scanner: MQTT
+# Ferramenta: mosquitto_sub
+# Alvo: https://localhost
+# Data: 2026-10-29T16:08:14.023924
+======================================================================
+
+Comando: mosquitto_sub -h https -p //localhost -t # -C 1
+Return code: 1
+--- STDOUT ---
+
+--- STDERR ---
+Error: Bad file descriptor

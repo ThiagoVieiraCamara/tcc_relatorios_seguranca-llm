@@ -1,0 +1,101 @@
+{
+  "alvo": "http://scanme.nmap.org/",
+  "afirmacoes": [
+    {
+      "afirmacao": "O alvo analisado foi http://scanme.nmap.org/, um recurso comumente utilizado para testes de ferramentas de rede e segurança.",
+      "suportada_pelos_dados": true,
+      "evidencia": "http://scanme.nmap.org/",
+      "justificativa": "O alvo está explicitamente declarado no relatório e nos dados brutos."
+    },
+    {
+      "afirmacao": "A análise identificou 6 vulnerabilidades, todas relacionadas à configuração de cabeçalhos HTTP.",
+      "suportada_pelos_dados": true,
+      "evidencia": "O relatório gerado lista exatamente 6 vulnerabilidades, todas com IDs começando com 'VULN-HTTP-', e o texto do relatório confirma que são relacionadas a cabeçalhos HTTP ausentes.",
+      "justificativa": "O relatório gerado apresenta 6 vulnerabilidades, e a análise dos dados brutos mostra a ausência de cabeçalhos de segurança HTTP que correspondem a essas vulnerabilidades."
+    },
+    {
+      "afirmacao": "Não foram detectadas vulnerabilidades de rede ou de firmware com base nos dados fornecidos.",
+      "suportada_pelos_dados": true,
+      "evidencia": "Os dados brutos incluem a saída do Nmap, que indica '0 IP addresses (0 hosts up) scanned' e 'WARNING: No targets were specified, so 0 hosts scanned.', além de uma mensagem de erro sobre a expressão do alvo. Não há dados que indiquem a detecção de vulnerabilidades de rede ou firmware.",
+      "justificativa": "Os dados brutos do Nmap indicam que nenhum host foi escaneado com sucesso e não há menção a vulnerabilidades de rede ou firmware nos dados de outros scanners."
+    },
+    {
+      "afirmacao": "Distribuição das Vulnerabilidades por Severidade: Alta: 1, Média: 2, Baixa: 3, Informativa: 0 (O banner do servidor foi classificado como informativo e não como uma vulnerabilidade).",
+      "suportada_pelos_dados": true,
+      "evidencia": "O relatório gerado detalha 6 vulnerabilidades. Contando a severidade de cada uma no JSON do relatório gerado: 'Alta': 1, 'Media': 2, 'Baixa': 3. O texto do relatório também menciona que o banner do servidor é informativo.",
+      "justificativa": "A contagem das severidades das 6 vulnerabilidades listadas no relatório gerado corresponde aos números fornecidos."
+    },
+    {
+      "afirmacao": "Ausência de cabeçalho `Content-Security-Policy`.",
+      "suportada_pelos_dados": true,
+      "evidencia": "O cabeçalho 'Content-Security-Policy' não está presente na lista de headers do scanner HTTP.",
+      "justificativa": "A ausência do cabeçalho HTTP é confirmada pela análise dos headers fornecidos pelo scanner HTTP."
+    },
+    {
+      "afirmacao": "Ausência de cabeçalho `X-Frame-Options`.",
+      "suportada_pelos_dados": true,
+      "evidencia": "O cabeçalho 'X-Frame-Options' não está presente na lista de headers do scanner HTTP.",
+      "justificativa": "A ausência do cabeçalho HTTP é confirmada pela análise dos headers fornecidos pelo scanner HTTP."
+    },
+    {
+      "afirmacao": "Ausência de cabeçalho `Strict-Transport-Security`.",
+      "suportada_pelos_dados": true,
+      "evidencia": "O cabeçalho 'Strict-Transport-Security' não está presente na lista de headers do scanner HTTP.",
+      "justificativa": "A ausência do cabeçalho HTTP é confirmada pela análise dos headers fornecidos pelo scanner HTTP."
+    },
+    {
+      "afirmacao": "Ausência de cabeçalho `X-Content-Type-Options`.",
+      "suportada_pelos_dados": true,
+      "evidencia": "O cabeçalho 'X-Content-Type-Options' não está presente na lista de headers do scanner HTTP.",
+      "justificativa": "A ausência do cabeçalho HTTP é confirmada pela análise dos headers fornecidos pelo scanner HTTP."
+    },
+    {
+      "afirmacao": "Ausência de cabeçalho `Referrer-Policy`.",
+      "suportada_pelos_dados": true,
+      "evidencia": "O cabeçalho 'Referrer-Policy' não está presente na lista de headers do scanner HTTP.",
+      "justificativa": "A ausência do cabeçalho HTTP é confirmada pela análise dos headers fornecidos pelo scanner HTTP."
+    },
+    {
+      "afirmacao": "Ausência de cabeçalho `Permissions-Policy`.",
+      "suportada_pelos_dados": true,
+      "evidencia": "O cabeçalho 'Permissions-Policy' não está presente na lista de headers do scanner HTTP.",
+      "justificativa": "A ausência do cabeçalho HTTP é confirmada pela análise dos headers fornecidos pelo scanner HTTP."
+    },
+    {
+      "afirmacao": "foi detectada a exposição do banner do servidor web: `Apache/2.4.7 (Ubuntu)`.",
+      "suportada_pelos_dados": true,
+      "evidencia": "O scanner HTTP retornou o header \"Server\": \"Apache/2.4.7 (Ubuntu)\".",
+      "justificativa": "O banner do servidor está explicitamente presente nos headers do scanner HTTP."
+    },
+    {
+      "afirmacao": "As limitações desta análise residem estritamente na quantidade e no tipo de dados fornecidos.",
+      "suportada_pelos_dados": true,
+      "evidencia": "Os dados brutos consistem na saída do Nmap (com erro de alvo), headers HTTP, e listas vazias ou com dados limitados para MQTT e XSS. O relatório técnico reflete isso ao focar em cabeçalhos HTTP.",
+      "justificativa": "A análise se baseia nos dados disponíveis e suas limitações são inerentes à natureza desses dados."
+    },
+    {
+      "afirmacao": "Os scanners focaram na ausência de cabeçalhos HTTP e na exposição de um banner de servidor.",
+      "suportada_pelos_dados": true,
+      "evidencia": "Os dados brutos contêm informações de cabeçalhos HTTP e o banner do servidor. Os dados de Nmap indicam falha na varredura, e os dados de MQTT e XSS são limitados ou vazios.",
+      "justificativa": "O conteúdo dos dados brutos suporta a afirmação sobre o foco dos scanners."
+    },
+    {
+      "afirmacao": "Não foram executados testes de exploração direta, varreduras de portas mais profundas (além do que o Nmap básico pode indicar como ausência de hosts) ou análise de tráfego de rede.",
+      "suportada_pelos_dados": true,
+      "evidencia": "A saída do Nmap indica falha na varredura. Não há dados brutos de scanners de exploração, varredura profunda de portas ou análise de tráfego.",
+      "justificativa": "A ausência de dados brutos relacionados a essas atividades valida a afirmação."
+    },
+    {
+      "afirmacao": "A ausência de dados de scanners como \"Dispositivo IoT\" ou \"Firmware\" impede qualquer análise específica sobre esses aspectos.",
+      "suportada_pelos_dados": true,
+      "evidencia": "Não há seções ou dados brutos provenientes de scanners de 'Dispositivo IoT' ou 'Firmware'.",
+      "justificativa": "A falta de dados específicos sobre Dispositivo IoT ou Firmware nos dados brutos suporta essa limitação."
+    }
+  ],
+  "resumo": {
+    "total_afirmacoes": 15,
+    "afirmacoes_suportadas": 15,
+    "afirmacoes_nao_suportadas": 0,
+    "taxa_fidelidade": 1.0
+  }
+}

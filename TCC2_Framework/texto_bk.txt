@@ -1,0 +1,43 @@
+"""Scanner XSS usando XSStrike."""
+import subprocess
+import re
+from scanners.base_scanner import BaseScanner
+from config import XSS_TIMEOUT
+
+
+class XSSScanner(BaseScanner):
+    nome = "XSStrike"
+
+    @staticmethod
+    def _remover_ansi(texto: str) -> str:
+        return re.sub(r"\x1B\[[0-?]*[ -/]*[@-~]", "", texto)
+
+    def executar(self):
+        print(f"[*] Iniciando scan XSS em {self.alvo}")
+        try:
+            r = subprocess.run(
+                ["xsstrike", "-u", self.alvo, "--crawl"],
+                capture_output=True, text=True, timeout=XSS_TIMEOUT
+            )
+        except FileNotFoundError:
+            print("[!] xsstrike nao instalado/acessivel no PATH.")
+            return self.vulnerabilidades
+        except subprocess.TimeoutExpired:
+            print("[!] XSStrike excedeu o tempo limite.")
+            return self.vulnerabilidades
+
+        output = self._remover_ansi(r.stdout)
+        self.dados_brutos["raw"] = output
+
+        # XSStrike usa marcadores tipo "Vulnerable" / "Payload"
+        # Heuristica simples: se aparecer "Vulnerable" no output, sinalizamos.
+        if re.search(r"vulnerable", output, re.IGNORECASE):
+            self.add_vuln(
+                tipo="Possivel XSS detectado",
+                descricao="XSStrike identificou ponto potencialmente vulneravel a XSS",
+                severidade="Alta",
+                categoria="Web/API",
+                evidencia=output[:1000],
+            )
+
+        return self.vulnerabilidades

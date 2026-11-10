@@ -1,0 +1,65 @@
+[
+  {
+    "tipo": "Header ausente: Content-Security-Policy",
+    "descricao": "Ausencia de CSP (protecao contra XSS e injection)",
+    "severidade": "Alta",
+    "categoria": "Web/API",
+    "scanner": "HTTP",
+    "evidencia": null,
+    "detectado_em": "2026-10-22T15:52:18.193391"
+  },
+  {
+    "tipo": "Header ausente: Strict-Transport-Security",
+    "descricao": "Ausencia de HSTS (vulneravel a downgrade attack)",
+    "severidade": "Media",
+    "categoria": "Web/API",
+    "scanner": "HTTP",
+    "evidencia": null,
+    "detectado_em": "2026-10-22T15:52:18.193414"
+  },
+  {
+    "tipo": "Header ausente: Referrer-Policy",
+    "descricao": "Ausencia de Referrer-Policy",
+    "severidade": "Baixa",
+    "categoria": "Web/API",
+    "scanner": "HTTP",
+    "evidencia": null,
+    "detectado_em": "2026-10-22T15:52:18.193422"
+  },
+  {
+    "tipo": "Header ausente: Permissions-Policy",
+    "descricao": "Ausencia de Permissions-Policy (ex-Feature-Policy)",
+    "severidade": "Baixa",
+    "categoria": "Web/API",
+    "scanner": "HTTP",
+    "evidencia": null,
+    "detectado_em": "2026-10-22T15:52:18.193426"
+  },
+  {
+    "tipo": "CORS permissivo",
+    "descricao": "'Allow-Origin: *' permite acesso de qualquer origem",
+    "severidade": "Media",
+    "categoria": "Web/API",
+    "scanner": "HTTP",
+    "evidencia": null,
+    "detectado_em": "2026-10-22T15:52:18.193453"
+  },
+  {
+    "tipo": "Metodo HTTP habilitado: PUT",
+    "descricao": "Pode permitir upload arbitrario",
+    "severidade": "Media",
+    "categoria": "Web/API",
+    "scanner": "HTTP",
+    "evidencia": "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE",
+    "detectado_em": "2026-10-22T15:52:18.195710"
+  },
+  {
+    "tipo": "Metodo HTTP habilitado: DELETE",
+    "descricao": "Pode permitir remocao de recursos",
+    "severidade": "Media",
+    "categoria": "Web/API",
+    "scanner": "HTTP",
+    "evidencia": "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE",
+    "detectado_em": "2026-10-22T15:52:18.195721"
+  }
+]

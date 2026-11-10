@@ -1,0 +1,40 @@
+# Log bruto de execucao
+# Scanner: XSS
+# Ferramenta: endpoints_descobertos
+# Alvo: http://localhost:3000/#/
+# Data: 2026-10-22T15:53:27.873010
+======================================================================
+
+Total descoberto: 29
+Limite testado: 20
+
+Endpoints:
+http://localhost:3000/#/
+http://localhost:3000/scripts.js
+http://localhost:3000/rolldown-runtime-BoHGiXSq.js
+http://localhost:3000/chunk-DBPdFzgj.js
+http://localhost:3000/polyfills.js
+http://localhost:3000/styles.css
+http://localhost:3000/chunk-1qQQGal7.js
+http://localhost:3000/chunk-Cv2YgWUq.js
+http://localhost:3000/main.js
+http://localhost:3000/redirect?to=http
+http://localhost:3000/redirect?to=https
+http://localhost:3000/wallet-web3.module-wTOnhm_r.js
+http://localhost:3000/faucet.module-C29hbfVs.js
+http://localhost:3000/application/vnd.openxmlformats-officedocument.wordprocessingml.do
+http://localhost:3000/web3-sandbox.module-BmlpKNfJ.js
+http://localhost:3000/application/vnd.ms-word.do
+http://localhost:3000/about.component-CqdnxQ-q.js
+http://localhost:3000/coding-challenge-page.component-Sl0Kca01.js
+http://localhost:3000/recycle.component-BGn9yQWr.js
+http://localhost:3000/confetti-CBIxuiwe.js
+http://localhost:3000/hacking-instructor-Dj9tjwgl.js
+http://localhost:3000/%5C/index%5C.html
+http://localhost:3000/Edge/
+http://localhost:3000/Trident/
+http://localhost:3000/zone.js
+http://localhost:3000/Zone.js
+http://localhost:3000/text/
+http://localhost:3000/%7B%7Bhref%7D%7D
+http://localhost:3000/main.js

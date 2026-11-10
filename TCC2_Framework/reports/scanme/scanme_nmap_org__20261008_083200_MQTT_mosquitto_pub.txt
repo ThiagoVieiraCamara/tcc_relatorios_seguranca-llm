@@ -1,0 +1,13 @@
+# Log bruto de execucao
+# Scanner: MQTT
+# Ferramenta: mosquitto_pub
+# Alvo: http://scanme.nmap.org/
+# Data: 2026-10-08T08:32:05.520883
+======================================================================
+
+Comando: mosquitto_pub -h http -p //scanme.nmap.org/ -t iot_scanner/test -m scan_probe
+Return code: 1
+--- STDOUT ---
+
+--- STDERR ---
+Error: Bad file descriptor

@@ -1,0 +1,253 @@
+<<<JSON>>>
+{
+    "alvo": "http://0.tcp.sa.ngrok.io:12356",
+    "data_analise": "29/10/2026 15:51",
+    "dados_truncados": false,
+    "quantidade_vulnerabilidades": 7,
+    "distribuicao_severidade": {
+        "Critica": 0,
+        "Alta": 1,
+        "Media": 4,
+        "Baixa": 2,
+        "Informativa": 0,
+        "Nao determinada": 0
+    },
+    "vulnerabilidades": [
+        {
+            "id": "VULN-001",
+            "id_origem": "Nao determinado pelos dados fornecidos",
+            "ferramenta_origem": "HTTP",
+            "nome": "Header ausente: Content-Security-Policy",
+            "categoria": "Web/API",
+            "status": "nao_confirmada",
+            "severidade": "Alta",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": "Severidade informada pela ferramenta.",
+            "identificadores": [],
+            "evidencia": "Nao determinado pelos dados fornecidos",
+            "fonte_evidencia": "vulnerabilidades",
+            "impacto": "A ausencia de CSP remove uma camada de defesa que pode reduzir o impacto de XSS e de outras injecoes de conteudo. Nos dados, o Dalfox nao reportou XSS nos 20 endpoints testados; nao ha injecao confirmada.",
+            "mitigacao": "Configurar o cabecalho Content-Security-Policy nas respostas HTTP, restringindo as origens permitidas para scripts e demais recursos.",
+            "referencias_normativas": ["OWASP IoT Top 10 (interfaces inseguras do ecossistema)"]
+        },
+        {
+            "id": "VULN-002",
+            "id_origem": "Nao determinado pelos dados fornecidos",
+            "ferramenta_origem": "HTTP",
+            "nome": "Header ausente: Strict-Transport-Security",
+            "categoria": "Web/API",
+            "status": "nao_confirmada",
+            "severidade": "Media",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": "Severidade informada pela ferramenta.",
+            "identificadores": [],
+            "evidencia": "Nao determinado pelos dados fornecidos",
+            "fonte_evidencia": "vulnerabilidades",
+            "impacto": "O HSTS so tem efeito quando enviado em respostas HTTPS. As respostas analisadas foram obtidas por HTTP, em http://0.tcp.sa.ngrok.io:12356. O impacto efetivo de rebaixamento de protocolo: Nao determinado pelos dados fornecidos.",
+            "mitigacao": "Disponibilizar o servico por HTTPS e enviar o cabecalho Strict-Transport-Security nas respostas HTTPS.",
+            "referencias_normativas": ["ETSI EN 303 645 (comunicacao segura)"]
+        },
+        {
+            "id": "VULN-003",
+            "id_origem": "Nao determinado pelos dados fornecidos",
+            "ferramenta_origem": "HTTP",
+            "nome": "Header ausente: Referrer-Policy",
+            "categoria": "Web/API",
+            "status": "nao_confirmada",
+            "severidade": "Baixa",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": "Severidade informada pela ferramenta.",
+            "identificadores": [],
+            "evidencia": "Nao determinado pelos dados fornecidos",
+            "fonte_evidencia": "vulnerabilidades",
+            "impacto": "Sem uma politica definida, o navegador aplica o comportamento padrao, que pode enviar a URL de origem a outros sites e expor parametros presentes nela.",
+            "mitigacao": "Definir o cabecalho Referrer-Policy com uma politica restritiva nas respostas HTTP.",
+            "referencias_normativas": []
+        },
+        {
+            "id": "VULN-004",
+            "id_origem": "Nao determinado pelos dados fornecidos",
+            "ferramenta_origem": "HTTP",
+            "nome": "Header ausente: Permissions-Policy",
+            "categoria": "Web/API",
+            "status": "nao_confirmada",
+            "severidade": "Baixa",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": "Severidade informada pela ferramenta.",
+            "identificadores": [],
+            "evidencia": "Nao determinado pelos dados fornecidos",
+            "fonte_evidencia": "vulnerabilidades",
+            "impacto": "Sem Permissions-Policy, as permissoes de recursos do navegador ficam no comportamento padrao. A resposta GET inclui o cabecalho legado \"Feature-Policy: payment 'self'\", que restringe apenas o recurso de pagamento.",
+            "mitigacao": "Adicionar o cabecalho Permissions-Policy definindo explicitamente os recursos do navegador permitidos.",
+            "referencias_normativas": []
+        },
+        {
+            "id": "VULN-005",
+            "id_origem": "Nao determinado pelos dados fornecidos",
+            "ferramenta_origem": "HTTP",
+            "nome": "CORS permissivo",
+            "categoria": "Web/API",
+            "status": "confirmada",
+            "severidade": "Media",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": "Severidade informada pela ferramenta.",
+            "identificadores": [],
+            "evidencia": "Access-Control-Allow-Origin: *",
+            "fonte_evidencia": "dados_brutos",
+            "impacto": "Pode permitir que paginas de qualquer origem leiam respostas de endpoints acessiveis sem autenticacao. Nenhum endpoint com dados sensiveis foi analisado, portanto o impacto real nao pode ser confirmado.",
+            "mitigacao": "Restringir o cabecalho Access-Control-Allow-Origin a uma lista de origens confiaveis.",
+            "referencias_normativas": ["OWASP IoT Top 10 (interfaces inseguras do ecossistema)"]
+        },
+        {
+            "id": "VULN-006",
+            "id_origem": "Nao determinado pelos dados fornecidos",
+            "ferramenta_origem": "HTTP",
+            "nome": "Metodo HTTP habilitado: PUT",
+            "categoria": "Web/API",
+            "status": "confirmada",
+            "severidade": "Media",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": "Severidade informada pela ferramenta.",
+            "identificadores": [],
+            "evidencia": "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE",
+            "fonte_evidencia": "vulnerabilidades",
+            "impacto": "Pode permitir envio ou substituicao de recursos, caso algum endpoint aceite PUT sem controle de acesso. Nos dados brutos, os metodos aparecem no cabecalho CORS da resposta OPTIONS (\"Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE\"), e nao em um cabecalho Allow.",
+            "mitigacao": "Remover PUT dos metodos permitidos onde nao for necessario e exigir autenticacao e autorizacao nos endpoints que o utilizem.",
+            "referencias_normativas": []
+        },
+        {
+            "id": "VULN-007",
+            "id_origem": "Nao determinado pelos dados fornecidos",
+            "ferramenta_origem": "HTTP",
+            "nome": "Metodo HTTP habilitado: DELETE",
+            "categoria": "Web/API",
+            "status": "confirmada",
+            "severidade": "Media",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": "Severidade informada pela ferramenta.",
+            "identificadores": [],
+            "evidencia": "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE",
+            "fonte_evidencia": "vulnerabilidades",
+            "impacto": "Pode permitir remocao de recursos, caso algum endpoint aceite DELETE sem controle de acesso. Nos dados brutos, o metodo aparece no cabecalho CORS da resposta OPTIONS, e nao em um cabecalho Allow.",
+            "mitigacao": "Remover DELETE dos metodos permitidos onde nao for necessario e exigir autenticacao e autorizacao nos endpoints que o utilizem.",
+            "referencias_normativas": []
+        }
+    ],
+    "observacoes_nao_confirmadas": [
+        {
+            "id": "OBS-001",
+            "descricao": "A resposta OPTIONS tambem anuncia os metodos PATCH e POST para origem cruzada. Eles nao constam da lista oficial e nao foram registrados como vulnerabilidade.",
+            "evidencia": "Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE",
+            "fonte_evidencia": "dados_brutos (HTTP/requests_options)"
+        },
+        {
+            "id": "OBS-002",
+            "descricao": "O katana descobriu um endpoint de redirecionamento que recebe o destino pelo parametro 'to'. O Dalfox testou a variante 'to=http' para XSS, sem achados; a variante 'to=https' ficou fora do limite de endpoints testados.",
+            "evidencia": "http://0.tcp.sa.ngrok.io:12356/redirect?to=http",
+            "fonte_evidencia": "dados_brutos (XSS/katana)"
+        }
+    ],
+    "limitacoes": [
+        "Os quatro itens de cabecalho ausente (VULN-001 a VULN-004) vieram da ferramenta com evidencia nula. Ausencia nao pode ser citada como trecho literal; por isso esses itens estao como nao confirmados, embora a lista de cabecalhos da resposta GET registrada nos logs nao inclua esses cabecalhos.",
+        "A evidencia da ferramenta para PUT e DELETE (\"Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE\") nao aparece nos logs brutos; os metodos aparecem apenas no cabecalho Access-Control-Allow-Methods da resposta OPTIONS. Esse cabecalho anuncia metodos para requisicoes de origem cruzada e, sozinho, nao prova que algum endpoint aceite PUT ou DELETE.",
+        "O Nmap nao escaneou o alvo. O alvo foi passado no formato host:porta e a ferramenta reportou falha de resolucao (\"Nmap done: 0 IP addresses (0 hosts up)\"). Portas, servicos e versoes: Nao determinado pelos dados fornecidos.",
+        "O teste MQTT foi inconclusivo: \"TIMEOUT atingido.\" no mosquitto_sub e \"Return code: 14\" no mosquitto_pub. A existencia de um broker MQTT: Nao determinado pelos dados fornecidos.",
+        "Cobertura parcial do teste de XSS: \"Total descoberto: 29\" e \"Limite testado: 20\". O Dalfox retornou apenas \"[\\n{}]\" para todos os endpoints testados, sem detalhes de parametros ou payloads.",
+        "Tipo de dispositivo, fabricante, modelo e firmware: Nao determinado pelos dados fornecidos.",
+        "A ausencia de outras vulnerabilidades nos dados nao comprova a ausencia de vulnerabilidades no alvo."
+    ]
+}
+<<<FIM_JSON>>>
+<<<RELATORIO>>>
+RELATÓRIO TÉCNICO DE SEGURANÇA
+Alvo: http://0.tcp.sa.ngrok.io:12356
+Data da análise: 29/10/2026 15:51
+
+
+1. SUMÁRIO EXECUTIVO
+
+O alvo foi acessado por HTTP no host 0.tcp.sa.ngrok.io, porta 12356. A requisição GET retornou "Status: 200 OK" e a requisição OPTIONS retornou "Status: 204 No Content". Portas, serviços e versões não foram enumerados, porque a varredura Nmap não chegou a escanear o host.
+
+- Quantidade de vulnerabilidades: 7
+- Distribuição por severidade: Crítica 0, Alta 1, Média 4, Baixa 2, Informativa 0, Não determinada 0
+- Confirmadas: 3 | Não confirmadas: 4
+
+Todas as 7 vulnerabilidades são da categoria Web/API e vieram do scanner HTTP, que também informou as severidades. Os 4 itens não confirmados são cabeçalhos ausentes, para os quais a ferramenta não forneceu evidência.
+
+
+2. ANÁLISE DE RISCOS
+
+VULN-001 — Header ausente: Content-Security-Policy
+Categoria: Web/API | Severidade: Alta (ferramenta) | Status: não confirmada
+Evidência: Não determinado pelos dados fornecidos.
+Risco: a ausência de CSP remove uma camada de defesa que pode reduzir o impacto de XSS e de outras injeções de conteúdo. Nos dados, o Dalfox não reportou XSS nos 20 endpoints testados; não há injeção confirmada.
+
+VULN-002 — Header ausente: Strict-Transport-Security
+Categoria: Web/API | Severidade: Média (ferramenta) | Status: não confirmada
+Evidência: Não determinado pelos dados fornecidos.
+Risco: o HSTS só tem efeito quando enviado em respostas HTTPS. As respostas analisadas foram obtidas por HTTP, em http://0.tcp.sa.ngrok.io:12356. O impacto efetivo de rebaixamento de protocolo não foi determinado pelos dados fornecidos.
+
+VULN-003 — Header ausente: Referrer-Policy
+Categoria: Web/API | Severidade: Baixa (ferramenta) | Status: não confirmada
+Evidência: Não determinado pelos dados fornecidos.
+Risco: sem uma política definida, o navegador aplica o comportamento padrão, que pode enviar a URL de origem a outros sites e expor parâmetros presentes nela.
+
+VULN-004 — Header ausente: Permissions-Policy
+Categoria: Web/API | Severidade: Baixa (ferramenta) | Status: não confirmada
+Evidência: Não determinado pelos dados fornecidos.
+Risco: sem Permissions-Policy, as permissões de recursos do navegador ficam no comportamento padrão. A resposta GET inclui o cabeçalho legado "Feature-Policy: payment 'self'", que restringe apenas o recurso de pagamento.
+
+VULN-005 — CORS permissivo
+Categoria: Web/API | Severidade: Média (ferramenta) | Status: confirmada
+Evidência: "Access-Control-Allow-Origin: *" (respostas GET e OPTIONS)
+Risco: pode permitir que páginas de qualquer origem leiam respostas de endpoints acessíveis sem autenticação. Nenhum endpoint com dados sensíveis foi analisado, portanto o impacto real não pode ser confirmado.
+
+VULN-006 — Método HTTP habilitado: PUT
+Categoria: Web/API | Severidade: Média (ferramenta) | Status: confirmada
+Evidência: "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE" (lista da ferramenta)
+Risco: pode permitir envio ou substituição de recursos, caso algum endpoint aceite PUT sem controle de acesso. Nos logs brutos, os métodos aparecem no cabeçalho CORS da resposta OPTIONS ("Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE"), e não em um cabeçalho Allow.
+
+VULN-007 — Método HTTP habilitado: DELETE
+Categoria: Web/API | Severidade: Média (ferramenta) | Status: confirmada
+Evidência: "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE" (lista da ferramenta)
+Risco: pode permitir remoção de recursos, caso algum endpoint aceite DELETE sem controle de acesso. Nos logs brutos, o método aparece no cabeçalho CORS da resposta OPTIONS, e não em um cabeçalho Allow.
+
+
+3. RECOMENDAÇÕES DE MITIGAÇÃO
+
+Alta
+- VULN-001 (CSP): configurar o cabeçalho Content-Security-Policy nas respostas HTTP, restringindo as origens permitidas para scripts e demais recursos.
+
+Média
+- VULN-002 (HSTS): disponibilizar o serviço por HTTPS e enviar o cabeçalho Strict-Transport-Security nas respostas HTTPS.
+- VULN-005 (CORS): restringir o cabeçalho Access-Control-Allow-Origin a uma lista de origens confiáveis.
+- VULN-006 (PUT): remover PUT dos métodos permitidos onde não for necessário e exigir autenticação e autorização nos endpoints que o utilizem.
+- VULN-007 (DELETE): remover DELETE dos métodos permitidos onde não for necessário e exigir autenticação e autorização nos endpoints que o utilizem.
+
+Baixa
+- VULN-003 (Referrer-Policy): definir o cabeçalho Referrer-Policy com uma política restritiva nas respostas HTTP.
+- VULN-004 (Permissions-Policy): adicionar o cabeçalho Permissions-Policy definindo explicitamente os recursos do navegador permitidos.
+
+Referências: OWASP IoT Top 10 (interfaces inseguras do ecossistema) para VULN-001 e VULN-005; ETSI EN 303 645 (comunicação segura) para VULN-002.
+
+
+4. CONSIDERAÇÕES FINAIS
+
+Síntese: as 7 vulnerabilidades da lista oficial são de configuração HTTP (cabeçalhos de segurança, CORS e métodos). Três têm evidência literal nos dados; quatro dependem de evidência de ausência que a ferramenta não registrou. Nenhum achado de XSS, MQTT ou de portas e serviços consta nos dados.
+
+Observações NÃO CONFIRMADAS (fora da contagem):
+
+OBS-001 — A resposta OPTIONS também anuncia PATCH e POST para origem cruzada ("Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE"). Esses métodos não constam da lista oficial.
+
+OBS-002 — O katana descobriu o endpoint "http://0.tcp.sa.ngrok.io:12356/redirect?to=http", que recebe o destino do redirecionamento por parâmetro. O Dalfox testou essa variante para XSS, sem achados; a variante to=https ficou fora do limite testado.
+
+Limitações da análise:
+
+- Os cabeçalhos ausentes (VULN-001 a VULN-004) vieram da ferramenta com evidência nula. A lista de cabeçalhos da resposta GET nos logs não inclui esses cabeçalhos, mas ausência não pode ser citada como trecho literal.
+- A evidência da ferramenta para PUT e DELETE ("Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE") não aparece nos logs brutos. Os métodos aparecem só no cabeçalho Access-Control-Allow-Methods, que sozinho não prova que algum endpoint aceite esses métodos.
+- O Nmap não escaneou o alvo ("Nmap done: 0 IP addresses (0 hosts up)"); o alvo foi passado no formato host:porta.
+- MQTT inconclusivo: "TIMEOUT atingido." no mosquitto_sub e "Return code: 14" no mosquitto_pub.
+- XSS: "Total descoberto: 29" e "Limite testado: 20"; o Dalfox retornou apenas "[{}]" para todos os endpoints testados.
+- Tipo de dispositivo, fabricante, modelo e firmware não foram determinados pelos dados fornecidos.
+- A ausência de outras vulnerabilidades nos dados não comprova a ausência de vulnerabilidades no alvo.
+<<<FIM_RELATORIO>>>

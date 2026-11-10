@@ -1,0 +1,19 @@
+# Log bruto de execucao
+# Scanner: XSS
+# Ferramenta: endpoints_descobertos
+# Alvo: https://localhost:4443/cgi-bin/luci/
+# Data: 2026-10-29T16:14:37.729020
+======================================================================
+
+Total descoberto: 8
+Limite testado: 20
+
+Endpoints:
+https://localhost:4443/cgi-bin/luci/
+https://localhost:4443/luci-static/resources/cbi.js
+https://localhost:4443/luci-static/bootstrap/mobile.css
+https://localhost:4443/luci-static/resources/xhr.js
+https://localhost:4443/luci-static/bootstrap/cascade.css
+https://localhost:4443/luci-static/resources/form.action
+https://localhost:4443/luci-static/resources/cbi.js
+https://localhost:4443/luci-static/bootstrap/cascade.css

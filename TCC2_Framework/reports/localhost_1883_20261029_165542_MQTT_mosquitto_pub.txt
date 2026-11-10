@@ -1,0 +1,12 @@
+# Log bruto de execucao
+# Scanner: MQTT
+# Ferramenta: mosquitto_pub
+# Alvo: localhost:1883
+# Data: 2026-10-29T16:55:57.465706
+======================================================================
+
+Comando: mosquitto_pub -h localhost -p 1883 -t iot_scanner/test -m scan_probe
+Return code: 0
+--- STDOUT ---
+
+--- STDERR ---

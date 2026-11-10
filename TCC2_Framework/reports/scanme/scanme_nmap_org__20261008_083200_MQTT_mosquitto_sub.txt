@@ -1,0 +1,13 @@
+# Log bruto de execucao
+# Scanner: MQTT
+# Ferramenta: mosquitto_sub
+# Alvo: http://scanme.nmap.org/
+# Data: 2026-10-08T08:32:05.520698
+======================================================================
+
+Comando: mosquitto_sub -h http -p //scanme.nmap.org/ -t # -C 1
+Return code: 1
+--- STDOUT ---
+
+--- STDERR ---
+Error: Bad file descriptor

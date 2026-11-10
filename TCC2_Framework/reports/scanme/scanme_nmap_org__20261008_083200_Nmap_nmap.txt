@@ -1,0 +1,15 @@
+# Log bruto de execucao
+# Scanner: Nmap
+# Ferramenta: nmap
+# Alvo: http://scanme.nmap.org/
+# Data: 2026-10-08T08:32:00.558875
+======================================================================
+
+Comando: nmap -sV -sC -Pn -T4 --open -p 1-10000 http://scanme.nmap.org/
+
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-10-08 08:32 -0400
+Nmap done: 0 IP addresses (0 hosts up) scanned in 0.15 seconds
+
+--- STDERR ---
+Unable to split netmask from target expression: "http://scanme.nmap.org/"
+WARNING: No targets were specified, so 0 hosts scanned.

@@ -1,0 +1,18 @@
+# Log bruto de execucao
+# Scanner: HTTP
+# Ferramenta: requests_options
+# Alvo: http://0.tcp.sa.ngrok.io:12356
+# Data: 2026-10-29T15:43:30.990025
+======================================================================
+
+--- Requisicao: OPTIONS http://0.tcp.sa.ngrok.io:12356 ---
+Status: 204 No Content
+
+Headers de resposta:
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE
+  Vary: Access-Control-Request-Headers
+  Content-Length: 0
+  Date: Thu, 29 Oct 2026 19:43:30 GMT
+  Connection: keep-alive
+  Keep-Alive: timeout=5

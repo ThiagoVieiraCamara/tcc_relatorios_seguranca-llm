@@ -1,0 +1,13 @@
+# Log bruto de execucao
+# Scanner: MQTT
+# Ferramenta: mosquitto_pub
+# Alvo: 0.tcp.sa.ngrok.io:12356
+# Data: 2026-10-29T15:43:41.510817
+======================================================================
+
+Comando: mosquitto_pub -h 0.tcp.sa.ngrok.io -p 12356 -t iot_scanner/test -m scan_probe
+Return code: 14
+--- STDOUT ---
+
+--- STDERR ---
+Error: Success

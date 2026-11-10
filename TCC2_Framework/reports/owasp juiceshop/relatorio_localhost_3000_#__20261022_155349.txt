@@ -1,0 +1,155 @@
+```json
+{
+  "alvo": "http://localhost:3000/#/",
+  "quantidade_vulnerabilidades": 7,
+  "vulnerabilidades": [
+    {
+      "id": "HTTP_HEADER_MISSING_CSP",
+      "nome": "Header ausente: Content-Security-Policy",
+      "categoria": "Web/API",
+      "severidade": "Alta",
+      "evidencia": null,
+      "impacto": "A ausência da diretiva Content-Security-Policy (CSP) deixa a aplicação vulnerável a ataques de Cross-Site Scripting (XSS) e outras injeções, permitindo a execução de scripts maliciosos no contexto do navegador do usuário.",
+      "mitigacao": "Implementar o header Content-Security-Policy para definir políticas de carregamento de recursos e execução de scripts."
+    },
+    {
+      "id": "HTTP_HEADER_MISSING_HSTS",
+      "nome": "Header ausente: Strict-Transport-Security",
+      "categoria": "Web/API",
+      "severidade": "Media",
+      "evidencia": null,
+      "impacto": "A falta do header Strict-Transport-Security (HSTS) torna a comunicação vulnerável a ataques de downgrade, onde a conexão pode ser forçada a usar HTTP em vez de HTTPS, expondo os dados transmitidos.",
+      "mitigacao": "Configurar o header Strict-Transport-Security (HSTS) para forçar o uso de HTTPS."
+    },
+    {
+      "id": "HTTP_HEADER_MISSING_REFERRER_POLICY",
+      "nome": "Header ausente: Referrer-Policy",
+      "categoria": "Web/API",
+      "severidade": "Baixa",
+      "evidencia": null,
+      "impacto": "A ausência da diretiva Referrer-Policy pode levar a um vazamento inadvertido de informações do referenciador em requisições HTTP, impactando a privacidade do usuário e a segurança da aplicação.",
+      "mitigacao": "Implementar o header Referrer-Policy para controlar quais informações de referenciador são enviadas."
+    },
+    {
+      "id": "HTTP_HEADER_MISSING_PERMISSIONS_POLICY",
+      "nome": "Header ausente: Permissions-Policy",
+      "categoria": "Web/API",
+      "severidade": "Baixa",
+      "evidencia": null,
+      "impacto": "A falta do header Permissions-Policy (anteriormente Feature-Policy) pode resultar em um acesso não controlado a funcionalidades do navegador, como câmera, microfone ou geolocalização, por partes não autorizadas da aplicação.",
+      "mitigacao": "Configurar o header Permissions-Policy para controlar o acesso a recursos e APIs do navegador."
+    },
+    {
+      "id": "CORS_PERMISSIVE",
+      "nome": "CORS permissivo",
+      "categoria": "Web/API",
+      "severidade": "Media",
+      "evidencia": "'Allow-Origin: *'",
+      "impacto": "A configuração permissiva de CORS com 'Access-Control-Allow-Origin: *' permite que qualquer origem acesse os recursos, o que pode ser explorado para roubo de dados sensíveis ou execução de ações maliciosas em nome do usuário.",
+      "mitigacao": "Restringir a política de CORS para permitir apenas origens confiáveis e específicas."
+    },
+    {
+      "id": "HTTP_METHOD_ENABLED_PUT",
+      "nome": "Metodo HTTP habilitado: PUT",
+      "categoria": "Web/API",
+      "severidade": "Media",
+      "evidencia": "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE",
+      "impacto": "A habilitação do método HTTP PUT pode permitir que um atacante modifique ou substitua recursos de forma arbitrária, potencialmente levando à indisponibilidade de serviços ou à injeção de conteúdo malicioso.",
+      "mitigacao": "Desabilitar métodos HTTP desnecessários, como PUT, se não forem estritamente utilizados pela funcionalidade do dispositivo IoT."
+    },
+    {
+      "id": "HTTP_METHOD_ENABLED_DELETE",
+      "nome": "Metodo HTTP habilitado: DELETE",
+      "categoria": "Web/API",
+      "severidade": "Media",
+      "evidencia": "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE",
+      "impacto": "A habilitação do método HTTP DELETE pode permitir que um atacante remova recursos críticos ou dados sensíveis, resultando em perda de dados ou interrupção do serviço.",
+      "mitigacao": "Desabilitar métodos HTTP desnecessários, como DELETE, se não forem estritamente utilizados pela funcionalidade do dispositivo IoT."
+    }
+  ]
+}
+```
+```markdown
+==============================
+PARTE 2 — RELATORIO TECNICO
+==============================
+
+1. SUMARIO EXECUTIVO
+
+Este relatório detalha a análise de segurança do alvo http://localhost:3000/#/, um dispositivo IoT acessado em 22/10/2026 15:53. A análise identificou 7 vulnerabilidades.
+
+A distribuição das vulnerabilidades por severidade é a seguinte:
+- Alta: 1
+- Média: 3
+- Baixa: 3
+
+Nenhuma vulnerabilidade de rede, firmware ou configuração foi explicitamente identificada pelos scanners fornecidos. As vulnerabilidades detectadas estão concentradas na camada Web/API.
+
+2. ANALISE DE RISCOS
+
+As seguintes vulnerabilidades foram identificadas:
+
+*   **Nome:** Header ausente: Content-Security-Policy
+    *   **Categoria:** Web/API
+    *   **Severidade:** Alta
+    *   **Evidencias:** Nenhum header 'Content-Security-Policy' presente na resposta HTTP.
+    *   **Risco Associado no Contexto de IoT:** A ausência desta política de segurança permite que atacantes injetem scripts maliciosos (XSS) no dispositivo ou na interface web associada. Em um dispositivo IoT, isso pode levar ao controle malicioso do dispositivo, roubo de credenciais de acesso, ou uso do dispositivo em ataques de botnet.
+
+*   **Nome:** CORS permissivo
+    *   **Categoria:** Web/API
+    *   **Severidade:** Media
+    *   **Evidencias:** `'Allow-Origin: *'`
+    *   **Risco Associado no Contexto de IoT:** A permissão de acesso a partir de qualquer origem ('*') pode expor os endpoints de controle do dispositivo a requisições maliciosas de sites externos. Um atacante poderia explorar essa falha para interagir com o dispositivo sem autorização, potencialmente enviando comandos não autorizados ou coletando dados.
+
+*   **Nome:** Metodo HTTP habilitado: PUT
+    *   **Categoria:** Web/API
+    *   **Severidade:** Media
+    *   **Evidencias:** `Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE`
+    *   **Risco Associado no Contexto de IoT:** A habilitação do método HTTP PUT, sem restrições adequadas, pode permitir que um atacante substitua ou modifique arquivos e configurações do dispositivo de forma arbitrária. Isso pode comprometer a integridade do sistema, introduzir software malicioso ou alterar o comportamento esperado do dispositivo IoT.
+
+*   **Nome:** Metodo HTTP habilitado: DELETE
+    *   **Categoria:** Web/API
+    *   **Severidade:** Media
+    *   **Evidencias:** `Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE`
+    *   **Risco Associado no Contexto de IoT:** A permissão do método HTTP DELETE pode ser explorada para apagar dados críticos ou arquivos de configuração do dispositivo. Em um cenário IoT, isso pode levar à perda permanente de dados operacionais, à interrupção do serviço ou à inutilização do dispositivo.
+
+*   **Nome:** Header ausente: Strict-Transport-Security
+    *   **Categoria:** Web/API
+    *   **Severidade:** Media
+    *   **Evidencias:** Nenhum header 'Strict-Transport-Security' presente na resposta HTTP.
+    *   **Risco Associado no Contexto de IoT:** A falta deste header torna a comunicação vulnerável a ataques de downgrade de TLS/SSL. Um atacante pode interceptar a comunicação e forçar o dispositivo a usar HTTP em vez de HTTPS, permitindo a interceptação de dados sensíveis transmitidos entre o dispositivo e os sistemas de controle.
+
+*   **Nome:** Header ausente: Referrer-Policy
+    *   **Categoria:** Web/API
+    *   **Severidade:** Baixa
+    *   **Evidencias:** Nenhum header 'Referrer-Policy' presente na resposta HTTP.
+    *   **Risco Associado no Contexto de IoT:** Embora de severidade baixa, a ausência desta política pode levar ao vazamento de informações do referenciador em requisições. Em alguns cenários, isso pode revelar detalhes sobre de onde um usuário ou outro serviço está interagindo com o dispositivo IoT, o que poderia ser útil para um atacante em fases de reconhecimento.
+
+*   **Nome:** Header ausente: Permissions-Policy
+    *   **Categoria:** Web/API
+    *   **Severidade:** Baixa
+    *   **Evidencias:** Nenhum header 'Permissions-Policy' presente na resposta HTTP.
+    *   **Risco Associado no Contexto de IoT:** A falta de controle sobre as permissões de funcionalidades do navegador pode permitir que partes não autorizadas da interface web do dispositivo IoT acessem recursos sensíveis do dispositivo ou do navegador do usuário, como localização, câmera ou microfone, sem o consentimento explícito.
+
+3. RECOMENDACOES DE MITIGACAO
+
+As seguintes recomendações são prioritárias com base na severidade das vulnerabilidades:
+
+*   **Para Header ausente: Content-Security-Policy (Alta Severidade):**
+    *   **Recomendação:** Implementar e configurar corretamente o header `Content-Security-Policy` (CSP). Definir diretivas para controlar estritamente as fontes permitidas para scripts, estilos e outros recursos, minimizando o risco de ataques XSS. Exemplo: `Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';` (ajustar conforme a necessidade da aplicação).
+
+*   **Para CORS permissivo e Métodos HTTP Habilitados (PUT, DELETE) (Média Severidade):**
+    *   **Recomendação:** Restringir a política de CORS para aceitar apenas origens específicas e confiáveis, em vez de permitir `'*'`. Além disso, desabilitar métodos HTTP que não são essenciais para a funcionalidade do dispositivo IoT. Se PUT e DELETE não são necessários para a operação normal, eles devem ser removidos da lista de métodos permitidos no servidor.
+
+*   **Para Header ausente: Strict-Transport-Security (Média Severidade):**
+    *   **Recomendação:** Configurar o servidor web para enviar o header `Strict-Transport-Security` (HSTS). Isso garantirá que todos os acessos subsequentes ao dispositivo sejam feitos via HTTPS, protegendo contra ataques de downgrade. É recomendável usar uma diretiva `max-age` apropriada e considerar a diretiva `includeSubDomains` se aplicável. Exemplo: `Strict-Transport-Security: max-age=31536000; includeSubDomains; preload`.
+
+*   **Para Header ausente: Referrer-Policy e Permissions-Policy (Baixa Severidade):**
+    *   **Recomendação:** Implementar os headers `Referrer-Policy` e `Permissions-Policy` com configurações adequadas. Para `Referrer-Policy`, usar diretivas como `'strict-origin-when-cross-origin'` ou `'no-referrer-when-downgrade'` para controlar o vazamento de informações. Para `Permissions-Policy`, definir quais funcionalidades do navegador (como câmera, localização, etc.) a aplicação pode acessar, limitando o escopo e protegendo a privacidade do usuário.
+
+4. CONSIDERACOES FINAIS
+
+A análise do alvo http://localhost:3000/#/ revelou um conjunto de vulnerabilidades críticas focadas na configuração de segurança da interface web do dispositivo IoT. A ausência de headers de segurança essenciais como `Content-Security-Policy` e `Strict-Transport-Security`, juntamente com configurações permissivas de CORS e a habilitação de métodos HTTP de escrita/remoção desnecessários, representa um risco significativo.
+
+As limitações desta análise residem nos dados fornecidos. O Nmap não conseguiu escanear o alvo `localhost` devido a um problema de formatação, e nenhum outro dado de rede ou sistema operacional foi apresentado. A análise de XSS, embora tenha descoberto muitos endpoints, não detalhou testes de exploração ou evidências concretas de vulnerabilidade de XSS, apenas a lista de endpoints rastreados. As vulnerabilidades foram identificadas exclusivamente com base na ausência de cabeçalhos de segurança e configurações permissivas nos dados brutos do scanner HTTP. Uma análise mais aprofundada exigiria acesso direto ao dispositivo, testes de exploração ativa e a obtenção de informações sobre o sistema operacional e a configuração da rede.
+```

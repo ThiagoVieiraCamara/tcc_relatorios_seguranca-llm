@@ -1,0 +1,20 @@
+# Log bruto de execucao
+# Scanner: XSS
+# Ferramenta: katana
+# Alvo: https://localhost:4443/cgi-bin/luci/
+# Data: 2026-10-29T16:14:37.728897
+======================================================================
+
+Comando: katana -u https://localhost:4443/cgi-bin/luci/ -d 2 -jc -silent -timeout 10
+
+--- STDOUT ---
+https://localhost:4443/cgi-bin/luci/
+https://localhost:4443/luci-static/resources/cbi.js
+https://localhost:4443/luci-static/bootstrap/mobile.css
+https://localhost:4443/luci-static/resources/xhr.js
+https://localhost:4443/luci-static/bootstrap/cascade.css
+https://localhost:4443/luci-static/resources/form.action
+https://localhost:4443/luci-static/resources/cbi.js
+https://localhost:4443/luci-static/bootstrap/cascade.css
+
+--- STDERR ---

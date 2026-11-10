@@ -1,0 +1,12 @@
+# Log bruto de execucao
+# Scanner: XSS
+# Ferramenta: endpoints_descobertos
+# Alvo: http://localhost:1883
+# Data: 2026-10-29T16:56:10.797644
+======================================================================
+
+Total descoberto: 1
+Limite testado: 20
+
+Endpoints:
+http://localhost:1883

@@ -1,0 +1,165 @@
+# Log bruto de execucao
+# Scanner: XSS
+# Ferramenta: dalfox
+# Alvo: http://scanme.nmap.org/
+# Data: 2026-10-08T08:38:48.114113
+======================================================================
+
+
+--- Dalfox em http://scanme.nmap.org/ ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://scanme.nmap.org/shared/css/nst-foot.css ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em https://nmap.org/download.html ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em https://nmap.org/oem/ ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em https://nmap.org/docs.html ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em https://nmap.org/book/install.html ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://scanme.nmap.org/shared/css/nst-foot.css?v=2 ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://scanme.nmap.org/shared/js/nst.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://scanme.nmap.org/site.css ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://scanme.nmap.org/shared/css/nst.css ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em https://nmap.org/npsl/ ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://scanme.nmap.org/shared/js/nst.js?v=2 ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://scanme.nmap.org/shared/css/nst.css?v=2 ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em https://nmap.org/book/man.html ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em https://nmap.org/oem/docs/Nmap-OEM-Software-Redistribution-License-Contract.do ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em https://nmap.org/shared/css/db5.css?v=2 ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em https://nmap.org/shared/css/db5.css ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em https://nmap.org/mailman/listinfo/svn ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em https://nmap.org/man/sk/index.html ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em https://nmap.org/docs.html ---
+STDOUT: [
+{}]
+
+STDERR: 

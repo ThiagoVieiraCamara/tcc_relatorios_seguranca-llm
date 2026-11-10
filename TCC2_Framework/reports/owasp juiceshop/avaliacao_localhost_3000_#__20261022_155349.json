@@ -1,0 +1,143 @@
+{
+  "alvo": "http://localhost:3000/#/",
+  "afirmacoes": [
+    {
+      "afirmacao": "Este relatório detalha a análise de segurança do alvo http://localhost:3000/#/, um dispositivo IoT acessado em 22/10/2026 15:53.",
+      "suportada_pelos_dados": true,
+      "evidencia": "TARGET: http://localhost:3000/#/\nStarting Nmap 7.99 ( https://nmap.org ) at 2026-10-22 15:52 -0400\nDate: Thu, 22 Oct 2026 19:52:18 GMT",
+      "justificativa": "O alvo está definido e as datas dos logs do Nmap e do header HTTP são consistentes com a data e hora mencionadas."
+    },
+    {
+      "afirmacao": "A análise identificou 7 vulnerabilidades.",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"quantidade_vulnerabilidades\": 7",
+      "justificativa": "O JSON do relatório gerado indica explicitamente 7 vulnerabilidades."
+    },
+    {
+      "afirmacao": "A distribuição das vulnerabilidades por severidade é a seguinte: Alta: 1, Média: 3, Baixa: 3.",
+      "suportada_pelos_dados": true,
+      "evidencia": "Alta: 1\nMédia: 3\nBaixa: 3",
+      "justificativa": "A contagem de vulnerabilidades por severidade no sumário executivo corresponde à soma das severidades listadas nas vulnerabilidades individuais no JSON do relatório gerado (1 Alta + 3 Média + 3 Baixa = 7)."
+    },
+    {
+      "afirmacao": "Nenhuma vulnerabilidade de rede, firmware ou configuração foi explicitamente identificada pelos scanners fornecidos.",
+      "suportada_pelos_dados": true,
+      "evidencia": "Nmap: raw: \"Unable to split netmask from target expression: \\\"http://localhost:3000/#/\\\"\\nWARNING: No targets were specified, so 0 hosts scanned.\"\nHTTP: status_code: 200\nMQTT: {}",
+      "justificativa": "O Nmap falhou em escanear e não reportou vulnerabilidades. O scanner MQTT não apresentou resultados. O scanner HTTP reportou um status 200, mas sem vulnerabilidades de rede, firmware ou configuração explícitas nos dados brutos. O relatório gerado foca em vulnerabilidades de Web/API."
+    },
+    {
+      "afirmacao": "As vulnerabilidades detectadas estão concentradas na camada Web/API.",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"categoria\": \"Web/API\"",
+      "justificativa": "Todas as 7 vulnerabilidades listadas no JSON do relatório gerado têm a categoria 'Web/API'."
+    },
+    {
+      "afirmacao": "Header ausente: Content-Security-Policy.",
+      "suportada_pelos_dados": true,
+      "evidencia": "HTTP: headers: {\"Access-Control-Allow-Origin\": \"*\", \"X-Content-Type-Options\": \"nosniff\", \"X-Frame-Options\": \"SAMEORIGIN\", \"Feature-Policy\": \"payment 'self'\", \"X-Recruiting\": \"/#/jobs\", \"Accept-Ranges\": \"bytes\", \"Cache-Control\": \"public, max-age=0\", \"Last-Modified\": \"Thu, 22 Oct 2026 19:41:58 GMT\", \"ETag\": \"W/\\\"2700-1a1652271ec\\\"\", \"Content-Type\": \"text/html; charset=UTF-8\", \"Vary\": \"Accept-Encoding\", \"Content-Encoding\": \"gzip\", \"Date\": \"Thu, 22 Oct 2026 19:52:18 GMT\", \"Connection\": \"keep-alive\", \"Keep-Alive\": \"timeout=5\", \"Transfer-Encoding\": \"chunked\"}",
+      "justificativa": "A lista de headers fornecida nos dados brutos do scanner HTTP não inclui 'Content-Security-Policy'."
+    },
+    {
+      "afirmacao": "Header ausente: Strict-Transport-Security.",
+      "suportada_pelos_dados": true,
+      "evidencia": "HTTP: headers: {...}",
+      "justificativa": "A lista de headers fornecida nos dados brutos do scanner HTTP não inclui 'Strict-Transport-Security'."
+    },
+    {
+      "afirmacao": "Header ausente: Referrer-Policy.",
+      "suportada_pelos_dados": true,
+      "evidencia": "HTTP: headers: {...}",
+      "justificativa": "A lista de headers fornecida nos dados brutos do scanner HTTP não inclui 'Referrer-Policy'."
+    },
+    {
+      "afirmacao": "Header ausente: Permissions-Policy.",
+      "suportada_pelos_dados": true,
+      "evidencia": "HTTP: headers: {\"Feature-Policy\": \"payment 'self'\", ...}",
+      "justificativa": "A lista de headers fornecida nos dados brutos do scanner HTTP não inclui 'Permissions-Policy'. No entanto, inclui 'Feature-Policy' que é um precursor. A afirmação é que 'Permissions-Policy' está ausente, o que é factual com base nos dados."
+    },
+    {
+      "afirmacao": "CORS permissivo.",
+      "suportada_pelos_dados": true,
+      "evidencia": "HTTP: headers: {\"Access-Control-Allow-Origin\": \"*\", ...}",
+      "justificativa": "O header 'Access-Control-Allow-Origin' está configurado para '*' nos dados brutos do scanner HTTP."
+    },
+    {
+      "afirmacao": "Metodo HTTP habilitado: PUT.",
+      "suportada_pelos_dados": false,
+      "evidencia": "HTTP: headers: {\"Allow\": \",GET,HEAD,PUT,PATCH,POST,DELETE\"}",
+      "justificativa": "O header 'Allow' não está presente nos dados brutos do scanner HTTP. Portanto, a habilitação do método PUT não pode ser confirmada pelos dados brutos."
+    },
+    {
+      "afirmacao": "Metodo HTTP habilitado: DELETE.",
+      "suportada_pelos_dados": false,
+      "evidencia": "HTTP: headers: {\"Allow\": \",GET,HEAD,PUT,PATCH,POST,DELETE\"}",
+      "justificativa": "O header 'Allow' não está presente nos dados brutos do scanner HTTP. Portanto, a habilitação do método DELETE não pode ser confirmada pelos dados brutos."
+    },
+    {
+      "afirmacao": "A ausência da diretiva Content-Security-Policy (CSP) deixa a aplicação vulnerável a ataques de Cross-Site Scripting (XSS) e outras injeções, permitindo a execução de scripts maliciosos no contexto do navegador do usuário.",
+      "suportada_pelos_dados": false,
+      "evidencia": "XSS: endpoints_descobertos: [\"http://localhost:3000/#/\", ...]",
+      "justificativa": "Embora o relatório mencione a ausência de CSP e o scanner XSS liste endpoints, os dados brutos não fornecem evidências diretas de que a aplicação *está* vulnerável a XSS. A afirmação sobre a vulnerabilidade é uma inferência baseada na ausência do header, não um resultado direto de um teste de exploração nos dados brutos."
+    },
+    {
+      "afirmacao": "A configuração permissiva de CORS com 'Access-Control-Allow-Origin: *' permite que qualquer origem acesse os recursos, o que pode ser explorado para roubo de dados sensíveis ou execução de ações maliciosas em nome do usuário.",
+      "suportada_pelos_dados": false,
+      "evidencia": "HTTP: headers: {\"Access-Control-Allow-Origin\": \"*\", ...}",
+      "justificativa": "Os dados brutos confirmam a configuração 'Access-Control-Allow-Origin: *'. No entanto, a afirmação sobre a *exploração* para roubo de dados ou execução de ações maliciosas é uma consequência potencial, não uma evidência direta de que isso ocorreu ou pode ocorrer nos dados brutos."
+    },
+    {
+      "afirmacao": "A habilitação do método HTTP PUT pode permitir que um atacante modifique ou substitua recursos de forma arbitrária, potencialmente levando à indisponibilidade de serviços ou à injeção de conteúdo malicioso.",
+      "suportada_pelos_dados": false,
+      "evidencia": "HTTP: headers: {\"Allow\": \",GET,HEAD,PUT,PATCH,POST,DELETE\"}",
+      "justificativa": "O header 'Allow' não está presente nos dados brutos do scanner HTTP. Portanto, a habilitação do método PUT não pode ser confirmada, e consequentemente, o risco associado não pode ser validado com base nos dados brutos."
+    },
+    {
+      "afirmacao": "A habilitação do método HTTP DELETE pode permitir que um atacante remova recursos críticos ou dados sensíveis, resultando em perda de dados ou interrupção do serviço.",
+      "suportada_pelos_dados": false,
+      "evidencia": "HTTP: headers: {\"Allow\": \",GET,HEAD,PUT,PATCH,POST,DELETE\"}",
+      "justificativa": "O header 'Allow' não está presente nos dados brutos do scanner HTTP. Portanto, a habilitação do método DELETE não pode ser confirmada, e consequentemente, o risco associado não pode ser validado com base nos dados brutos."
+    },
+    {
+      "afirmacao": "A falta do header Strict-Transport-Security (HSTS) torna a comunicação vulnerável a ataques de downgrade, onde a conexão pode ser forçada a usar HTTP em vez de HTTPS, expondo os dados transmitidos.",
+      "suportada_pelos_dados": false,
+      "evidencia": "HTTP: headers: {...}",
+      "justificativa": "Os dados brutos confirmam a ausência do header 'Strict-Transport-Security'. No entanto, a afirmação sobre a *vulnerabilidade* a ataques de downgrade é uma consequência técnica da ausência do header, e não uma evidência direta nos dados brutos de que tal ataque ocorreu ou é explicitamente explorável com base apenas nos headers."
+    },
+    {
+      "afirmacao": "A ausência da diretiva Referrer-Policy pode levar a um vazamento inadvertido de informações do referenciador em requisições HTTP, impactando a privacidade do usuário e a segurança da aplicação.",
+      "suportada_pelos_dados": false,
+      "evidencia": "HTTP: headers: {...}",
+      "justificativa": "Os dados brutos confirmam a ausência do header 'Referrer-Policy'. No entanto, a afirmação sobre o *impacto* na privacidade e segurança é uma consequência potencial, e não uma evidência direta nos dados brutos de que tal vazamento ocorreu."
+    },
+    {
+      "afirmacao": "A falta do header Permissions-Policy (anteriormente Feature-Policy) pode resultar em um acesso não controlado a funcionalidades do navegador, como câmera, microfone ou geolocalização, por partes não autorizadas da aplicação.",
+      "suportada_pelos_dados": false,
+      "evidencia": "HTTP: headers: {\"Feature-Policy\": \"payment 'self'\", ...}",
+      "justificativa": "Os dados brutos confirmam a ausência do header 'Permissions-Policy'. A presença de 'Feature-Policy' não valida a afirmação sobre 'Permissions-Policy'. A afirmação sobre o *resultado* de acesso não controlado é uma consequência potencial, não uma evidência direta nos dados brutos."
+    },
+    {
+      "afirmacao": "O Nmap não conseguiu escanear o alvo localhost devido a um problema de formatação.",
+      "suportada_pelos_dados": true,
+      "evidencia": "Nmap: raw: \"Unable to split netmask from target expression: \\\"http://localhost:3000/#/\\\"\\nWARNING: No targets were specified, so 0 hosts scanned.\"",
+      "justificativa": "Os dados brutos do Nmap mostram explicitamente a mensagem 'Unable to split netmask from target expression', indicando um problema de formatação ou interpretação do alvo."
+    },
+    {
+      "afirmacao": "A análise de XSS, embora tenha descoberto muitos endpoints, não detalhou testes de exploração ou evidências concretas de vulnerabilidade de XSS, apenas a lista de endpoints rastreados.",
+      "suportada_pelos_dados": true,
+      "evidencia": "XSS: endpoints_descobertos: [\"http://localhost:3000/#/\", \"http://localhost:3000/scripts.js\", ...]",
+      "justificativa": "Os dados brutos do scanner XSS contêm apenas uma lista de 'endpoints_descobertos' e não fornecem detalhes sobre testes de exploração ou evidências de vulnerabilidade XSS real."
+    },
+    {
+      "afirmacao": "As vulnerabilidades foram identificadas exclusivamente com base na ausência de cabeçalhos de segurança e configurações permissivas nos dados brutos do scanner HTTP.",
+      "suportada_pelos_dados": true,
+      "evidencia": "Nmap: 0 hosts up\nXSS: endpoints_descobertos (lista grande)\nHTTP: status_code: 200, headers (com ausências e permissões)\nMQTT: {}",
+      "justificativa": "A maioria das vulnerabilidades reportadas (CSP, HSTS, Referrer-Policy, Permissions-Policy, CORS permissivo) são baseadas em headers HTTP. As vulnerabilidades de PUT e DELETE não são suportadas pelos dados brutos, mas a ausência de outras fontes de vulnerabilidade (rede, firmware, exploração XSS) reforça que a base principal foi a análise de headers HTTP."
+    }
+  ],
+  "resumo": {
+    "total_afirmacoes": 23,
+    "afirmacoes_suportadas": 12,
+    "afirmacoes_nao_suportadas": 11,
+    "taxa_fidelidade": 0.5217391304347826
+  }
+}

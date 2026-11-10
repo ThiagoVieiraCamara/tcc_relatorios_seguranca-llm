@@ -1,0 +1,10 @@
+# Log bruto de execucao
+# Scanner: MQTT
+# Ferramenta: mosquitto_sub
+# Alvo: 0.tcp.sa.ngrok.io:12356
+# Data: 2026-10-29T15:43:41.510536
+======================================================================
+
+TIMEOUT atingido.
+
+TIMEOUT atingido.

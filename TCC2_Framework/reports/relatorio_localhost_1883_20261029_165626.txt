@@ -1,0 +1,98 @@
+<<<JSON>>>
+{
+    "alvo": "localhost:1883",
+    "data_analise": "29/10/2026 16:56",
+    "dados_truncados": false,
+    "quantidade_vulnerabilidades": 2,
+    "distribuicao_severidade": {
+        "Critica": 0,
+        "Alta": 1,
+        "Media": 1,
+        "Baixa": 0,
+        "Informativa": 0,
+        "Nao determinada": 0
+    },
+    "vulnerabilidades": [
+        {
+            "id": "VULN-001",
+            "id_origem": "identificador do item na lista oficial, ou Nao determinado pelos dados fornecidos",
+            "ferramenta_origem": "MQTT",
+            "nome": "Publicacao Anonima",
+            "categoria": "IoT/MQTT",
+            "status": "confirmada",
+            "severidade": "Alta",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": "Nao determinado pelos dados fornecidos",
+            "identificadores": [],
+            "evidencia": "Broker aceita publicacoes sem autenticacao",
+            "fonte_evidencia": "vulnerabilidades",
+            "impacto": "A publicacao anonima em um broker MQTT pode permitir que dispositivos ou atacantes publiquem mensagens em tópicos sem necessidade de autenticacao, potencialmente sobrecarregando o sistema, enviando dados maliciosos ou interceptando informacoes sensiveis se os tópicos nao forem devidamente protegidos.",
+            "mitigacao": "Implementar mecanismos de autenticacao e autorizacao no broker MQTT para garantir que apenas dispositivos e usuarios autorizados possam publicar mensagens. Configurar politicas de acesso baseadas em tópicos.",
+            "referencias_normativas": []
+        },
+        {
+            "id": "VULN-002",
+            "id_origem": "identificador do item na lista oficial, ou Nao determinado pelos dados fornecidos",
+            "ferramenta_origem": "MQTT",
+            "nome": "MQTT sem TLS",
+            "categoria": "Transporte",
+            "status": "confirmada",
+            "severidade": "Media",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": "Nao determinado pelos dados fornecidos",
+            "identificadores": [],
+            "evidencia": "Broker em porta padrao 1883 (sem criptografia). MQTT seguro usa 8883.",
+            "impacto": "A transmissao de dados via MQTT sem o uso de TLS/SSL em texto plano na porta 1883 expoe a comunicacao a ataques de interceptacao (man-in-the-middle), permitindo que atacantes leiam ou modifiquem informacoes trocadas entre clientes e o broker.",
+            "mitigacao": "Configurar o broker MQTT para utilizar TLS/SSL na porta segura (geralmente 8883) e garantir que todos os clientes se conectem utilizando essa configuracao para criptografar o canal de comunicacao.",
+            "referencias_normativas": []
+        }
+    ],
+    "observacoes_nao_confirmadas": [
+        "A ferramenta XSS listou o endpoint 'http://localhost:1883', que nao corresponde a um servico web comum e pode indicar uma configuracao inesperada ou um erro de escopo."
+    ],
+    "limitacoes": [
+        "O Nmap falhou em resolver 'localhost:1883', indicando que pode nao ter sido possivel realizar escaneamentos profundos de rede. A mensagem 'WARNING: No targets were specified, so 0 hosts scanned.' sugere que o Nmap nao executou varreduras completas no alvo especificado.",
+        "Os dados brutos da ferramenta HTTP indicam um erro de conexao ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')), sugerindo que o servico HTTP nao esta disponivel ou nao respondeu adequadamente no alvo.",
+        "O campo \"evidencia\" para os achados de Publicacao Anonima e MQTT sem TLS foi extraido diretamente da lista de vulnerabilidades fornecida, pois os dados brutos nao continham substrings literais correspondentes a esses achados."
+    ]
+}
+<<<FIM_JSON>>>
+<<<RELATORIO>>>
+1. SUMARIO EXECUTIVO
+   * Visao geral do alvo: localhost:1883. Protocolos e servicos detectados: MQTT.
+   * Total de vulnerabilidades identificadas: 2.
+   * Distribuicao por severidade: Alta (1), Media (1).
+   * Vulnerabilidades confirmadas: 2. Vulnerabilidades nao confirmadas: 0.
+
+2. ANALISE DE RISCOS
+
+   * Nome: Publicacao Anonima
+     Categoria: IoT/MQTT
+     Severidade: Alta (ferramenta)
+     Status: confirmada
+     Evidencia: "Broker aceita publicacoes sem autenticacao"
+     Risco no contexto de IoT: A publicacao anonima em um broker MQTT pode permitir que dispositivos ou atacantes publiquem mensagens em tópicos sem necessidade de autenticacao, potencialmente sobrecarregando o sistema, enviando dados maliciosos ou interceptando informacoes sensiveis se os tópicos nao forem devidamente protegidos.
+
+   * Nome: MQTT sem TLS
+     Categoria: Transporte
+     Severidade: Media (ferramenta)
+     Status: confirmada
+     Evidencia: "Broker em porta padrao 1883 (sem criptografia). MQTT seguro usa 8883."
+     Risco no contexto de IoT: A transmissao de dados via MQTT sem o uso de TLS/SSL em texto plano na porta 1883 expoe a comunicacao a ataques de interceptacao (man-in-the-middle), permitindo que atacantes leiam ou modifiquem informacoes trocadas entre clientes e o broker.
+
+3. RECOMENDACOES DE MITIGACAO
+
+   * Para Publicacao Anonima (Alta): Implementar mecanismos de autenticacao e autorizacao no broker MQTT para garantir que apenas dispositivos e usuarios autorizados possam publicar mensagens. Configurar politicas de acesso baseadas em tópicos.
+   * Para MQTT sem TLS (Media): Configurar o broker MQTT para utilizar TLS/SSL na porta segura (geralmente 8883) e garantir que todos os clientes se conectem utilizando essa configuracao para criptografar o canal de comunicacao.
+
+4. CONSIDERACOES FINAIS
+   * Sintese dos resultados: O broker MQTT no alvo localhost:1883 apresenta duas vulnerabilidades significativas: a aceitacao de publicacoes anonimas e a utilizacao de comunicacao sem criptografia (sem TLS).
+   * Limitacoes:
+     - O Nmap encontrou dificuldades em resolver 'localhost:1883' e indicou que nenhum host foi escaneado, o que pode ter limitado a profundidade da analise de rede.
+     - A ferramenta HTTP reportou um erro de desconexao remota, sugerindo que o servico HTTP nao esta acessivel ou nao respondeu.
+     - O campo 'evidencia' para as vulnerabilidades MQTT foi retirado da lista oficial, pois os dados brutos nao continham os trechos literais correspondentes.
+     - A ausência de achados em outras categorias não comprova a ausência de vulnerabilidades.
+
+   * Observacoes nao confirmadas:
+     - A ferramenta XSS listou o endpoint 'http://localhost:1883', que nao corresponde a um servico web comum e pode indicar uma configuracao inesperada ou um erro de escopo.
+<<<FIM_RELATORIO>>>

@@ -1,0 +1,142 @@
+<<<JSON>>>
+{
+    "alvo": "https://localhost:4443/cgi-bin/luci/",
+    "data_analise": "29/10/2026 16:14",
+    "dados_truncados": false,
+    "quantidade_vulnerabilidades": 4,
+    "distribuicao_severidade": {
+        "Critica": 0,
+        "Alta": 1,
+        "Media": 1,
+        "Baixa": 2,
+        "Informativa": 0,
+        "Nao determinada": 0
+    },
+    "vulnerabilidades": [
+        {
+            "id": "VULN-001",
+            "id_origem": "Header ausente: Content-Security-Policy",
+            "ferramenta_origem": "HTTP",
+            "nome": "Header ausente: Content-Security-Policy",
+            "categoria": "Web/API",
+            "status": "confirmada",
+            "severidade": "Alta",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": null,
+            "identificadores": [],
+            "evidencia": null,
+            "fonte_evidencia": "vulnerabilidades",
+            "impacto": "A ausência de um cabeçalho Content-Security-Policy pode expor a aplicação a ataques de Cross-Site Scripting (XSS) e injeção de conteúdo.",
+            "mitigacao": "Implementar o cabeçalho Content-Security-Policy para definir políticas de segurança de conteúdo.",
+            "referencias_normativas": []
+        },
+        {
+            "id": "VULN-002",
+            "id_origem": "Header ausente: Strict-Transport-Security",
+            "ferramenta_origem": "HTTP",
+            "nome": "Header ausente: Strict-Transport-Security",
+            "categoria": "Web/API",
+            "status": "confirmada",
+            "severidade": "Media",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": null,
+            "identificadores": [],
+            "evidencia": null,
+            "fonte_evidencia": "vulnerabilidades",
+            "impacto": "A ausência do cabeçalho Strict-Transport-Security (HSTS) torna o dispositivo vulnerável a ataques de downgrade, onde a comunicação pode ser forçada a usar HTTP em vez de HTTPS.",
+            "mitigacao": "Implementar o cabeçalho Strict-Transport-Security (HSTS) para forçar o uso de conexões HTTPS.",
+            "referencias_normativas": []
+        },
+        {
+            "id": "VULN-003",
+            "id_origem": "Header ausente: Referrer-Policy",
+            "ferramenta_origem": "HTTP",
+            "nome": "Header ausente: Referrer-Policy",
+            "categoria": "Web/API",
+            "status": "confirmada",
+            "severidade": "Baixa",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": null,
+            "identificadores": [],
+            "evidencia": null,
+            "fonte_evidencia": "vulnerabilidades",
+            "impacto": "A ausência do cabeçalho Referrer-Policy pode levar à divulgação indevida de informações de referência (referrer) em requisições, comprometendo a privacidade.",
+            "mitigacao": "Configurar o cabeçalho Referrer-Policy para controlar o envio de informações de referência.",
+            "referencias_normativas": []
+        },
+        {
+            "id": "VULN-004",
+            "id_origem": "Header ausente: Permissions-Policy",
+            "ferramenta_origem": "HTTP",
+            "nome": "Header ausente: Permissions-Policy",
+            "categoria": "Web/API",
+            "status": "confirmada",
+            "severidade": "Baixa",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": null,
+            "identificadores": [],
+            "evidencia": null,
+            "fonte_evidencia": "vulnerabilidades",
+            "impacto": "A ausência do cabeçalho Permissions-Policy (anteriormente Feature-Policy) permite que recursos não autorizados acessem funcionalidades do navegador, como câmera, microfone, geolocalização, entre outros.",
+            "mitigacao": "Implementar o cabeçalho Permissions-Policy para controlar o acesso a recursos e APIs do navegador.",
+            "referencias_normativas": []
+        }
+    ],
+    "observacoes_nao_confirmadas": [],
+    "limitacoes": [
+        "O scanner Nmap apresentou um erro ao processar o alvo \"https://localhost:4443/cgi-bin/luci/\", indicando que o formato da máscara de rede não pôde ser separado da expressão do alvo. Consequentemente, nenhum host foi escaneado pelo Nmap."
+    ]
+}
+<<<FIM_JSON>>>
+<<<RELATORIO>>>
+1. SUMARIO EXECUTIVO
+   * Visao geral do alvo usando SOMENTE o que consta nos dados: O alvo analisado foi https://localhost:4443/cgi-bin/luci/. O scanner HTTP retornou um status code 403 e diversos cabeçalhos de segurança, como X-Frame-Options, X-XSS-Protection e X-Content-Type-Options.
+   * Quantidade de vulnerabilidades: 4
+   * Distribuicao por severidade: Alta: 1, Media: 1, Baixa: 2
+   * Vulnerabilidades confirmadas: 4
+   * Vulnerabilidades não confirmadas: 0
+
+2. ANALISE DE RISCOS
+   * Nome: Header ausente: Content-Security-Policy
+     Categoria: Web/API
+     Severidade: Alta (origem: ferramenta)
+     Status: confirmada
+     Evidencia: Ausencia de CSP (protecao contra XSS e injection)
+     Risco no contexto de IoT: A ausência de um cabeçalho Content-Security-Policy pode expor a aplicação a ataques de Cross-Site Scripting (XSS) e injeção de conteúdo.
+
+   * Nome: Header ausente: Strict-Transport-Security
+     Categoria: Web/API
+     Severidade: Media (origem: ferramenta)
+     Status: confirmada
+     Evidencia: Ausencia de HSTS (vulneravel a downgrade attack)
+     Risco no contexto de IoT: A ausência do cabeçalho Strict-Transport-Security (HSTS) torna o dispositivo vulnerável a ataques de downgrade, onde a comunicação pode ser forçada a usar HTTP em vez de HTTPS.
+
+   * Nome: Header ausente: Referrer-Policy
+     Categoria: Web/API
+     Severidade: Baixa (origem: ferramenta)
+     Status: confirmada
+     Evidencia: Ausencia de Referrer-Policy
+     Risco no contexto de IoT: A ausência do cabeçalho Referrer-Policy pode levar à divulgação indevida de informações de referência (referrer) em requisições, comprometendo a privacidade.
+
+   * Nome: Header ausente: Permissions-Policy
+     Categoria: Web/API
+     Severidade: Baixa (origem: ferramenta)
+     Status: confirmada
+     Evidencia: Ausencia de Permissions-Policy (ex-Feature-Policy)
+     Risco no contexto de IoT: A ausência do cabeçalho Permissions-Policy (anteriormente Feature-Policy) permite que recursos não autorizados acessem funcionalidades do navegador, como câmera, microfone, geolocalização, entre outros.
+
+3. RECOMENDACOES DE MITIGACAO
+   * Para Header ausente: Content-Security-Policy (Alta): Implementar o cabeçalho Content-Security-Policy para definir políticas de segurança de conteúdo.
+   * Para Header ausente: Strict-Transport-Security (Media): Implementar o cabeçalho Strict-Transport-Security (HSTS) para forçar o uso de conexões HTTPS.
+   * Para Header ausente: Referrer-Policy (Baixa): Configurar o cabeçalho Referrer-Policy para controlar o envio de informações de referência.
+   * Para Header ausente: Permissions-Policy (Baixa): Implementar o cabeçalho Permissions-Policy para controlar o acesso a recursos e APIs do navegador.
+
+4. CONSIDERACOES FINAIS
+   * Sintese dos resultados: A análise identificou a ausência de quatro cabeçalhos de segurança importantes em requisições HTTP para o alvo https://localhost:4443/cgi-bin/luci/, resultando em vulnerabilidades de severidade Alta, Média e Baixa.
+   * Limitacoes:
+     - O scanner Nmap apresentou um erro ao processar o alvo, não realizando escaneamento de hosts.
+     - As vulnerabilidades identificadas são relativas à configuração de cabeçalhos HTTP.
+     - A ausência de achados em outras categorias não comprova a ausência de vulnerabilidades.
+     - A análise se baseia exclusivamente nos dados fornecidos pelos scanners.
+     - O campo 'evidencia' para as vulnerabilidades não pôde ser preenchido com trechos literais dos dados de entrada, pois a informação provinha do bloco <vulnerabilidades>.
+<<<FIM_RELATORIO>>>

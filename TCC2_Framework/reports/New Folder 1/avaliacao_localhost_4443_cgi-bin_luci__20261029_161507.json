@@ -1,0 +1,759 @@
+{
+  "alvo": "https://localhost:4443/cgi-bin/luci/",
+  "cobertura_parcial": false,
+  "afirmacoes": [
+    {
+      "afirmacao": "O alvo analisado foi https://localhost:4443/cgi-bin/luci/.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "https://localhost:4443/cgi-bin/luci/",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'alvo' no JSON do relatório corresponde ao URL fornecido nos dados brutos."
+    },
+    {
+      "afirmacao": "O scanner HTTP retornou um status code 403.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "403",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'status_code' no JSON de dados brutos da ferramenta HTTP é 403."
+    },
+    {
+      "afirmacao": "O scanner HTTP retornou diversos cabeçalhos de segurança, como X-Frame-Options, X-XSS-Protection e X-Content-Type-Options.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "{\n      \"Connection\": \"Keep-Alive\",\n      \"Transfer-Encoding\": \"chunked\",\n      \"Keep-Alive\": \"timeout=20\",\n      \"Content-Type\": \"text/html\",\n      \"Cache-Control\": \"no-cache\",\n      \"Expires\": \"0\",\n      \"X-Frame-Options\": \"SAMEORIGIN\",\n      \"X-XSS-Protection\": \"1; mode=block\",\n      \"X-Content-Type-Options\": \"nosniff\"\n    }",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Os cabeçalhos X-Frame-Options, X-XSS-Protection e X-Content-Type-Options estão presentes no objeto 'headers' da ferramenta HTTP nos dados brutos."
+    },
+    {
+      "afirmacao": "Quantidade total de vulnerabilidades declarada no relatório é 4.",
+      "tipo": "quantidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "4",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'quantidade_vulnerabilidades' no JSON do relatório é 4."
+    },
+    {
+      "afirmacao": "Distribuição de severidade: Critica: 0.",
+      "tipo": "quantidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "0",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'Critica' no objeto 'distribuicao_severidade' do JSON do relatório é 0."
+    },
+    {
+      "afirmacao": "Distribuição de severidade: Alta: 1.",
+      "tipo": "quantidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "1",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'Alta' no objeto 'distribuicao_severidade' do JSON do relatório é 1."
+    },
+    {
+      "afirmacao": "Distribuição de severidade: Media: 1.",
+      "tipo": "quantidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "1",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'Media' no objeto 'distribuicao_severidade' do JSON do relatório é 1."
+    },
+    {
+      "afirmacao": "Distribuição de severidade: Baixa: 2.",
+      "tipo": "quantidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "2",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'Baixa' no objeto 'distribuicao_severidade' do JSON do relatório é 2."
+    },
+    {
+      "afirmacao": "Distribuição de severidade: Informativa: 0.",
+      "tipo": "quantidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "0",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'Informativa' no objeto 'distribuicao_severidade' do JSON do relatório é 0."
+    },
+    {
+      "afirmacao": "Distribuição de severidade: Nao determinada: 0.",
+      "tipo": "quantidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "0",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'Nao determinada' no objeto 'distribuicao_severidade' do JSON do relatório é 0."
+    },
+    {
+      "afirmacao": "Existe a vulnerabilidade com ID 'VULN-001' no relatório.",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "VULN-001",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A lista de 'vulnerabilidades' no JSON do relatório contém um item com 'id': 'VULN-001'."
+    },
+    {
+      "afirmacao": "A vulnerabilidade 'VULN-001' tem o ID de origem 'Header ausente: Content-Security-Policy'.",
+      "tipo": "identificador",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Header ausente: Content-Security-Policy",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'id_origem' para a vulnerabilidade com ID 'VULN-001' no JSON do relatório é 'Header ausente: Content-Security-Policy'."
+    },
+    {
+      "afirmacao": "A vulnerabilidade 'VULN-001' foi originada pela ferramenta 'HTTP'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "HTTP",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'ferramenta_origem' para a vulnerabilidade com ID 'VULN-001' no JSON do relatório é 'HTTP'."
+    },
+    {
+      "afirmacao": "O nome da vulnerabilidade 'VULN-001' é 'Header ausente: Content-Security-Policy'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Header ausente: Content-Security-Policy",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'nome' para a vulnerabilidade com ID 'VULN-001' no JSON do relatório é 'Header ausente: Content-Security-Policy'."
+    },
+    {
+      "afirmacao": "A categoria da vulnerabilidade 'VULN-001' é 'Web/API'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Web/API",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'categoria' para a vulnerabilidade com ID 'VULN-001' no JSON do relatório é 'Web/API'."
+    },
+    {
+      "afirmacao": "O status da vulnerabilidade 'VULN-001' é 'confirmada'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "confirmada",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'status' para a vulnerabilidade com ID 'VULN-001' no JSON do relatório é 'confirmada'."
+    },
+    {
+      "afirmacao": "A severidade da vulnerabilidade 'VULN-001' é 'Alta'.",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Alta",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'severidade' para a vulnerabilidade com ID 'VULN-001' no JSON do relatório é 'Alta'."
+    },
+    {
+      "afirmacao": "A origem da severidade da vulnerabilidade 'VULN-001' é 'ferramenta'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "ferramenta",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'origem_severidade' para a vulnerabilidade com ID 'VULN-001' no JSON do relatório é 'ferramenta'."
+    },
+    {
+      "afirmacao": "A justificativa da severidade da vulnerabilidade 'VULN-001' é nula.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": null,
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'justificativa_severidade' para a vulnerabilidade com ID 'VULN-001' no JSON do relatório é null."
+    },
+    {
+      "afirmacao": "A vulnerabilidade 'VULN-001' não possui identificadores.",
+      "tipo": "identificador",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "[]",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'identificadores' para a vulnerabilidade com ID 'VULN-001' no JSON do relatório é uma lista vazia."
+    },
+    {
+      "afirmacao": "A evidência da vulnerabilidade 'VULN-001' é nula.",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": null,
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'evidencia' para a vulnerabilidade com ID 'VULN-001' no JSON do relatório é null."
+    },
+    {
+      "afirmacao": "A fonte da evidência da vulnerabilidade 'VULN-001' é 'vulnerabilidades'.",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "vulnerabilidades",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'fonte_evidencia' para a vulnerabilidade com ID 'VULN-001' no JSON do relatório é 'vulnerabilidades'."
+    },
+    {
+      "afirmacao": "O impacto da vulnerabilidade 'VULN-001' é 'A ausência de um cabeçalho Content-Security-Policy pode expor a aplicação a ataques de Cross-Site Scripting (XSS) e injeção de conteúdo.'.",
+      "tipo": "impacto",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "A ausência de um cabeçalho Content-Security-Policy pode expor a aplicação a ataques de Cross-Site Scripting (XSS) e injeção de conteúdo.",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'impacto' para a vulnerabilidade com ID 'VULN-001' no JSON do relatório corresponde ao texto fornecido."
+    },
+    {
+      "afirmacao": "A mitigação da vulnerabilidade 'VULN-001' é 'Implementar o cabeçalho Content-Security-Policy para definir políticas de segurança de conteúdo.'.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Implementar o cabeçalho Content-Security-Policy para definir políticas de segurança de conteúdo.",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'mitigacao' para a vulnerabilidade com ID 'VULN-001' no JSON do relatório corresponde ao texto fornecido."
+    },
+    {
+      "afirmacao": "A vulnerabilidade 'VULN-001' não possui referências normativas.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "[]",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'referencias_normativas' para a vulnerabilidade com ID 'VULN-001' no JSON do relatório é uma lista vazia."
+    },
+    {
+      "afirmacao": "Existe a vulnerabilidade com ID 'VULN-002' no relatório.",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "VULN-002",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A lista de 'vulnerabilidades' no JSON do relatório contém um item com 'id': 'VULN-002'."
+    },
+    {
+      "afirmacao": "A vulnerabilidade 'VULN-002' tem o ID de origem 'Header ausente: Strict-Transport-Security'.",
+      "tipo": "identificador",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Header ausente: Strict-Transport-Security",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'id_origem' para a vulnerabilidade com ID 'VULN-002' no JSON do relatório é 'Header ausente: Strict-Transport-Security'."
+    },
+    {
+      "afirmacao": "A vulnerabilidade 'VULN-002' foi originada pela ferramenta 'HTTP'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "HTTP",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'ferramenta_origem' para a vulnerabilidade com ID 'VULN-002' no JSON do relatório é 'HTTP'."
+    },
+    {
+      "afirmacao": "O nome da vulnerabilidade 'VULN-002' é 'Header ausente: Strict-Transport-Security'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Header ausente: Strict-Transport-Security",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'nome' para a vulnerabilidade com ID 'VULN-002' no JSON do relatório é 'Header ausente: Strict-Transport-Security'."
+    },
+    {
+      "afirmacao": "A categoria da vulnerabilidade 'VULN-002' é 'Web/API'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Web/API",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'categoria' para a vulnerabilidade com ID 'VULN-002' no JSON do relatório é 'Web/API'."
+    },
+    {
+      "afirmacao": "O status da vulnerabilidade 'VULN-002' é 'confirmada'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "confirmada",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'status' para a vulnerabilidade com ID 'VULN-002' no JSON do relatório é 'confirmada'."
+    },
+    {
+      "afirmacao": "A severidade da vulnerabilidade 'VULN-002' é 'Media'.",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Media",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'severidade' para a vulnerabilidade com ID 'VULN-002' no JSON do relatório é 'Media'."
+    },
+    {
+      "afirmacao": "A origem da severidade da vulnerabilidade 'VULN-002' é 'ferramenta'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "ferramenta",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'origem_severidade' para a vulnerabilidade com ID 'VULN-002' no JSON do relatório é 'ferramenta'."
+    },
+    {
+      "afirmacao": "A justificativa da severidade da vulnerabilidade 'VULN-002' é nula.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": null,
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'justificativa_severidade' para a vulnerabilidade com ID 'VULN-002' no JSON do relatório é null."
+    },
+    {
+      "afirmacao": "A vulnerabilidade 'VULN-002' não possui identificadores.",
+      "tipo": "identificador",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "[]",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'identificadores' para a vulnerabilidade com ID 'VULN-002' no JSON do relatório é uma lista vazia."
+    },
+    {
+      "afirmacao": "A evidência da vulnerabilidade 'VULN-002' é nula.",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": null,
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'evidencia' para a vulnerabilidade com ID 'VULN-002' no JSON do relatório é null."
+    },
+    {
+      "afirmacao": "A fonte da evidência da vulnerabilidade 'VULN-002' é 'vulnerabilidades'.",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "vulnerabilidades",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'fonte_evidencia' para a vulnerabilidade com ID 'VULN-002' no JSON do relatório é 'vulnerabilidades'."
+    },
+    {
+      "afirmacao": "O impacto da vulnerabilidade 'VULN-002' é 'A ausência do cabeçalho Strict-Transport-Security (HSTS) torna o dispositivo vulnerável a ataques de downgrade, onde a comunicação pode ser forçada a usar HTTP em vez de HTTPS.'.",
+      "tipo": "impacto",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "A ausência do cabeçalho Strict-Transport-Security (HSTS) torna o dispositivo vulnerável a ataques de downgrade, onde a comunicação pode ser forçada a usar HTTP em vez de HTTPS.",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'impacto' para a vulnerabilidade com ID 'VULN-002' no JSON do relatório corresponde ao texto fornecido."
+    },
+    {
+      "afirmacao": "A mitigação da vulnerabilidade 'VULN-002' é 'Implementar o cabeçalho Strict-Transport-Security (HSTS) para forçar o uso de conexões HTTPS.'.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Implementar o cabeçalho Strict-Transport-Security (HSTS) para forçar o uso de conexões HTTPS.",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'mitigacao' para a vulnerabilidade com ID 'VULN-002' no JSON do relatório corresponde ao texto fornecido."
+    },
+    {
+      "afirmacao": "A vulnerabilidade 'VULN-002' não possui referências normativas.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "[]",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'referencias_normativas' para a vulnerabilidade com ID 'VULN-002' no JSON do relatório é uma lista vazia."
+    },
+    {
+      "afirmacao": "Existe a vulnerabilidade com ID 'VULN-003' no relatório.",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "VULN-003",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A lista de 'vulnerabilidades' no JSON do relatório contém um item com 'id': 'VULN-003'."
+    },
+    {
+      "afirmacao": "A vulnerabilidade 'VULN-003' tem o ID de origem 'Header ausente: Referrer-Policy'.",
+      "tipo": "identificador",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Header ausente: Referrer-Policy",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'id_origem' para a vulnerabilidade com ID 'VULN-003' no JSON do relatório é 'Header ausente: Referrer-Policy'."
+    },
+    {
+      "afirmacao": "A vulnerabilidade 'VULN-003' foi originada pela ferramenta 'HTTP'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "HTTP",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'ferramenta_origem' para a vulnerabilidade com ID 'VULN-003' no JSON do relatório é 'HTTP'."
+    },
+    {
+      "afirmacao": "O nome da vulnerabilidade 'VULN-003' é 'Header ausente: Referrer-Policy'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Header ausente: Referrer-Policy",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'nome' para a vulnerabilidade com ID 'VULN-003' no JSON do relatório é 'Header ausente: Referrer-Policy'."
+    },
+    {
+      "afirmacao": "A categoria da vulnerabilidade 'VULN-003' é 'Web/API'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Web/API",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'categoria' para a vulnerabilidade com ID 'VULN-003' no JSON do relatório é 'Web/API'."
+    },
+    {
+      "afirmacao": "O status da vulnerabilidade 'VULN-003' é 'confirmada'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "confirmada",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'status' para a vulnerabilidade com ID 'VULN-003' no JSON do relatório é 'confirmada'."
+    },
+    {
+      "afirmacao": "A severidade da vulnerabilidade 'VULN-003' é 'Baixa'.",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Baixa",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'severidade' para a vulnerabilidade com ID 'VULN-003' no JSON do relatório é 'Baixa'."
+    },
+    {
+      "afirmacao": "A origem da severidade da vulnerabilidade 'VULN-003' é 'ferramenta'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "ferramenta",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'origem_severidade' para a vulnerabilidade com ID 'VULN-003' no JSON do relatório é 'ferramenta'."
+    },
+    {
+      "afirmacao": "A justificativa da severidade da vulnerabilidade 'VULN-003' é nula.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": null,
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'justificativa_severidade' para a vulnerabilidade com ID 'VULN-003' no JSON do relatório é null."
+    },
+    {
+      "afirmacao": "A vulnerabilidade 'VULN-003' não possui identificadores.",
+      "tipo": "identificador",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "[]",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'identificadores' para a vulnerabilidade com ID 'VULN-003' no JSON do relatório é uma lista vazia."
+    },
+    {
+      "afirmacao": "A evidência da vulnerabilidade 'VULN-003' é nula.",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": null,
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'evidencia' para a vulnerabilidade com ID 'VULN-003' no JSON do relatório é null."
+    },
+    {
+      "afirmacao": "A fonte da evidência da vulnerabilidade 'VULN-003' é 'vulnerabilidades'.",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "vulnerabilidades",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'fonte_evidencia' para a vulnerabilidade com ID 'VULN-003' no JSON do relatório é 'vulnerabilidades'."
+    },
+    {
+      "afirmacao": "O impacto da vulnerabilidade 'VULN-003' é 'A ausência do cabeçalho Referrer-Policy pode levar à divulgação indevida de informações de referência (referrer) em requisições, comprometendo a privacidade.'.",
+      "tipo": "impacto",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "A ausência do cabeçalho Referrer-Policy pode levar à divulgação indevida de informações de referência (referrer) em requisições, comprometendo a privacidade.",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'impacto' para a vulnerabilidade com ID 'VULN-003' no JSON do relatório corresponde ao texto fornecido."
+    },
+    {
+      "afirmacao": "A mitigação da vulnerabilidade 'VULN-003' é 'Configurar o cabeçalho Referrer-Policy para controlar o envio de informações de referência.'.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Configurar o cabeçalho Referrer-Policy para controlar o envio de informações de referência.",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'mitigacao' para a vulnerabilidade com ID 'VULN-003' no JSON do relatório corresponde ao texto fornecido."
+    },
+    {
+      "afirmacao": "A vulnerabilidade 'VULN-003' não possui referências normativas.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "[]",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'referencias_normativas' para a vulnerabilidade com ID 'VULN-003' no JSON do relatório é uma lista vazia."
+    },
+    {
+      "afirmacao": "Existe a vulnerabilidade com ID 'VULN-004' no relatório.",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "VULN-004",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A lista de 'vulnerabilidades' no JSON do relatório contém um item com 'id': 'VULN-004'."
+    },
+    {
+      "afirmacao": "A vulnerabilidade 'VULN-004' tem o ID de origem 'Header ausente: Permissions-Policy'.",
+      "tipo": "identificador",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Header ausente: Permissions-Policy",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'id_origem' para a vulnerabilidade com ID 'VULN-004' no JSON do relatório é 'Header ausente: Permissions-Policy'."
+    },
+    {
+      "afirmacao": "A vulnerabilidade 'VULN-004' foi originada pela ferramenta 'HTTP'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "HTTP",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'ferramenta_origem' para a vulnerabilidade com ID 'VULN-004' no JSON do relatório é 'HTTP'."
+    },
+    {
+      "afirmacao": "O nome da vulnerabilidade 'VULN-004' é 'Header ausente: Permissions-Policy'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Header ausente: Permissions-Policy",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'nome' para a vulnerabilidade com ID 'VULN-004' no JSON do relatório é 'Header ausente: Permissions-Policy'."
+    },
+    {
+      "afirmacao": "A categoria da vulnerabilidade 'VULN-004' é 'Web/API'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Web/API",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'categoria' para a vulnerabilidade com ID 'VULN-004' no JSON do relatório é 'Web/API'."
+    },
+    {
+      "afirmacao": "O status da vulnerabilidade 'VULN-004' é 'confirmada'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "confirmada",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'status' para a vulnerabilidade com ID 'VULN-004' no JSON do relatório é 'confirmada'."
+    },
+    {
+      "afirmacao": "A severidade da vulnerabilidade 'VULN-004' é 'Baixa'.",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Baixa",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'severidade' para a vulnerabilidade com ID 'VULN-004' no JSON do relatório é 'Baixa'."
+    },
+    {
+      "afirmacao": "A origem da severidade da vulnerabilidade 'VULN-004' é 'ferramenta'.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "ferramenta",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'origem_severidade' para a vulnerabilidade com ID 'VULN-004' no JSON do relatório é 'ferramenta'."
+    },
+    {
+      "afirmacao": "A justificativa da severidade da vulnerabilidade 'VULN-004' é nula.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": null,
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'justificativa_severidade' para a vulnerabilidade com ID 'VULN-004' no JSON do relatório é null."
+    },
+    {
+      "afirmacao": "A vulnerabilidade 'VULN-004' não possui identificadores.",
+      "tipo": "identificador",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "[]",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'identificadores' para a vulnerabilidade com ID 'VULN-004' no JSON do relatório é uma lista vazia."
+    },
+    {
+      "afirmacao": "A evidência da vulnerabilidade 'VULN-004' é nula.",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": null,
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'evidencia' para a vulnerabilidade com ID 'VULN-004' no JSON do relatório é null."
+    },
+    {
+      "afirmacao": "A fonte da evidência da vulnerabilidade 'VULN-004' é 'vulnerabilidades'.",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "vulnerabilidades",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'fonte_evidencia' para a vulnerabilidade com ID 'VULN-004' no JSON do relatório é 'vulnerabilidades'."
+    },
+    {
+      "afirmacao": "O impacto da vulnerabilidade 'VULN-004' é 'A ausência do cabeçalho Permissions-Policy (anteriormente Feature-Policy) permite que recursos não autorizados acessem funcionalidades do navegador, como câmera, microfone, geolocalização, entre outros.'.",
+      "tipo": "impacto",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "A ausência do cabeçalho Permissions-Policy (anteriormente Feature-Policy) permite que recursos não autorizados acessem funcionalidades do navegador, como câmera, microfone, geolocalização, entre outros.",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'impacto' para a vulnerabilidade com ID 'VULN-004' no JSON do relatório corresponde ao texto fornecido."
+    },
+    {
+      "afirmacao": "A mitigação da vulnerabilidade 'VULN-004' é 'Implementar o cabeçalho Permissions-Policy para controlar o acesso a recursos e APIs do navegador.'.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Implementar o cabeçalho Permissions-Policy para controlar o acesso a recursos e APIs do navegador.",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'mitigacao' para a vulnerabilidade com ID 'VULN-004' no JSON do relatório corresponde ao texto fornecido."
+    },
+    {
+      "afirmacao": "A vulnerabilidade 'VULN-004' não possui referências normativas.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "[]",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'referencias_normativas' para a vulnerabilidade com ID 'VULN-004' no JSON do relatório é uma lista vazia."
+    },
+    {
+      "afirmacao": "O scanner Nmap apresentou um erro ao processar o alvo \"https://localhost:4443/cgi-bin/luci/\", indicando que o formato da máscara de rede não pôde ser separado da expressão do alvo.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Unable to split netmask from target expression: \"https://localhost:4443/cgi-bin/luci/\"\nWARNING: No targets were specified, so 0 hosts scanned.",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A seção 'STDERR' dos dados brutos do Nmap contém a mensagem de erro correspondente."
+    },
+    {
+      "afirmacao": "Consequentemente, nenhum host foi escaneado pelo Nmap.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "0 IP addresses (0 hosts up) scanned",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Os dados brutos do Nmap indicam '0 IP addresses (0 hosts up) scanned'."
+    },
+    {
+      "afirmacao": "O relatório menciona a ausência de quatro cabeçalhos de segurança importantes em requisições HTTP para o alvo https://localhost:4443/cgi-bin/luci/, resultando em vulnerabilidades de severidade Alta, Média e Baixa.",
+      "tipo": "outro",
+      "classificacao": "nao_suportada",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Esta é uma afirmação de resumo e não pode ser verificada com um único trecho literal. A verificação individual das vulnerabilidades já foi realizada."
+    },
+    {
+      "afirmacao": "O campo 'evidencia' para as vulnerabilidades não pôde ser preenchido com trechos literais dos dados de entrada, pois a informação provinha do bloco <vulnerabilidades>.",
+      "tipo": "outro",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Esta afirmação descreve uma limitação do processo de auditoria e não um fato sobre o alvo ou os dados."
+    }
+  ],
+  "consistencia_interna": {
+    "quantidade_relatorio_igual_lista_oficial": true,
+    "vulnerabilidades_fora_da_lista_oficial": [],
+    "vulnerabilidades_omitidas": []
+  },
+  "resumo": {
+    "total_afirmacoes": 55,
+    "afirmacoes_suportadas": 54,
+    "afirmacoes_nao_suportadas": 0,
+    "afirmacoes_contraditas": 0,
+    "afirmacoes_nao_verificaveis": 1,
+    "taxa_fidelidade": 0.9818
+  }
+}

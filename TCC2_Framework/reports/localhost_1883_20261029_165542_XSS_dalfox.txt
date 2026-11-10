@@ -1,0 +1,13 @@
+# Log bruto de execucao
+# Scanner: XSS
+# Ferramenta: dalfox
+# Alvo: http://localhost:1883
+# Data: 2026-10-29T16:56:10.797754
+======================================================================
+
+
+--- Dalfox em http://localhost:1883 ---
+STDOUT: [
+{}]
+
+STDERR: 

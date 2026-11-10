@@ -1,0 +1,86 @@
+
+"alvo": "https://localhost:4443/cgi-bin/luci/",
+"quantidade_vulnerabilidades": 4,
+"distribuicao_severidade": {
+"Critica": 0,
+"Alta": 1,
+"Media": 1,
+"Baixa": 2,
+"Informativa": 0,
+"Nao determinada": 0
+},
+"vulnerabilidades": [
+{
+"id": "VULN-001",
+"nome": "Header ausente: Content-Security-Policy",
+"categoria": "Web/API",
+"status": "nao_confirmada",
+"severidade": "Alta",
+"origem_severidade": "ferramenta",
+"justificativa_severidade": "Severidade Alta fornecida na lista oficial; a ausencia do header nao possui trecho literal nos dados brutos.",
+"identificadores": [],
+"evidencia": "Nao determinado pelos dados fornecidos",
+"impacto": "A ausencia de CSP pode reduzir a capacidade de o navegador restringir a execucao de scripts e conteudo injetado, mas nao ha evidencia literal nos dados fornecidos que confirme a configuracao do alvo para este item.",
+"mitigacao": "Configurar uma politica de Content-Security-Policy adequada no servidor web, revisando as fontes de script e conteudo permitidas.",
+"referencias_normativas": ["OWASP IoT Top 10"]
+},
+{
+"id": "VULN-002",
+"nome": "Header ausente: Strict-Transport-Security",
+"categoria": "Web/API",
+"status": "nao_confirmada",
+"severidade": "Media",
+"origem_severidade": "ferramenta",
+"justificativa_severidade": "Severidade Media fornecida na lista oficial; a ausencia do header nao possui trecho literal nos dados brutos.",
+"identificadores": [],
+"evidencia": "Nao determinado pelos dados fornecidos",
+"impacto": "A ausencia de HSTS pode expor o servico a tentativas de downgrade de protocolo, mas nao ha evidencia literal nos dados fornecidos que confirme a configuracao do alvo para este item.",
+"mitigacao": "Configurar o header Strict-Transport-Security em respostas HTTPS, conforme a politica do servico.",
+"referencias_normativas": ["OWASP IoT Top 10"]
+},
+{
+"id": "VULN-003",
+"nome": "Header ausente: Referrer-Policy",
+"categoria": "Web/API",
+"status": "nao_confirmada",
+"severidade": "Baixa",
+"origem_severidade": "ferramenta",
+"justificativa_severidade": "Severidade Baixa fornecida na lista oficial; a ausencia do header nao possui trecho literal nos dados brutos.",
+"identificadores": [],
+"evidencia": "Nao determinado pelos dados fornecidos",
+"impacto": "A ausencia de Referrer-Policy pode expor informacoes de referencia em requisicoes, mas nao ha evidencia literal nos dados fornecidos que confirme a configuracao do alvo para este item.",
+"mitigacao": "Definir uma Referrer-Policy restritiva nas respostas do servidor.",
+"referencias_normativas": ["OWASP IoT Top 10"]
+},
+{
+"id": "VULN-004",
+"nome": "Header ausente: Permissions-Policy",
+"categoria": "Web/API",
+"status": "nao_confirmada",
+"severidade": "Baixa",
+"origem_severidade": "ferramenta",
+"justificativa_severidade": "Severidade Baixa fornecida na lista oficial; a ausencia do header nao possui trecho literal nos dados brutos.",
+"identificadores": [],
+"evidencia": "Nao determinado pelos dados fornecidos",
+"impacto": "A ausencia de Permissions-Policy impede o controle granular sobre recursos do navegador, mas nao ha evidencia literal nos dados fornecidos que confirme a configuracao do alvo para este item.",
+"mitigacao": "Definir uma Permissions-Policy restringindo os recursos do navegador que nao sao necessarios.",
+"referencias_normativas": ["OWASP IoT Top 10"]
+}
+],
+"observacoes_nao_confirmadas": [
+"HTTP GET retornou status 403 Forbidden com headers X-Frame-Options: SAMEORIGIN, X-XSS-Protection: 1; mode=block, X-Content-Type-Options: nosniff.",
+"HTTP OPTIONS resultou em timeout: ERRO: HTTPSConnectionPool(host='localhost', port=4443): Read timed out.",
+"Nmap falhou: Unable to split netmask from target expression: "https://localhost:4443/cgi-bin/luci/" WARNING: No targets were specified, so 0 hosts scanned.",
+"MQTT mosquitto_sub e mosquitto_pub falharam com Error: Bad file descriptor devido a host malformado.",
+"Katana descobriu 8 endpoints; Dalfox teve TIMEOUT no alvo principal e retornou [{}] nos demais.",
+"Endpoints descobertos: https://localhost:4443/luci-static/resources/cbi.js, https://localhost:4443/luci-static/bootstrap/mobile.css, https://localhost:4443/luci-static/resources/xhr.js, https://localhost:4443/luci-static/bootstrap/cascade.css, https://localhost:4443/luci-static/resources/form.action (total 8)."
+],
+"limitacoes": [
+"Nmap nao conseguiu processar o alvo; varredura de portas nao realizada.",
+"Testes MQTT falharam por erro de resolucao do host.",
+"Requisicao OPTIONS timeout.",
+"Dalfox timeout no alvo principal.",
+"A ausencia dos headers CSP, HSTS, Referrer-Policy e Permissions-Policy nao possui evidencia literal; itens marcados como nao_confirmada.",
+"Dados nao indicam tipo, fabricante, modelo ou firmware do dispositivo."
+]
+}

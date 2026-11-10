@@ -1,0 +1,27 @@
+# Log bruto de execucao
+# Scanner: HTTP
+# Ferramenta: requests_get
+# Alvo: http://0.tcp.sa.ngrok.io:12356
+# Data: 2026-10-29T15:43:30.989777
+======================================================================
+
+--- Requisicao: GET http://0.tcp.sa.ngrok.io:12356 ---
+Status: 200 OK
+
+Headers de resposta:
+  Access-Control-Allow-Origin: *
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Feature-Policy: payment 'self'
+  X-Recruiting: /#/jobs
+  Accept-Ranges: bytes
+  Cache-Control: public, max-age=0
+  Last-Modified: Thu, 29 Oct 2026 18:56:26 GMT
+  ETag: W/"2700-1a18905441f"
+  Content-Type: text/html; charset=UTF-8
+  Vary: Accept-Encoding
+  Content-Encoding: gzip
+  Date: Thu, 29 Oct 2026 19:43:30 GMT
+  Connection: keep-alive
+  Keep-Alive: timeout=5
+  Transfer-Encoding: chunked

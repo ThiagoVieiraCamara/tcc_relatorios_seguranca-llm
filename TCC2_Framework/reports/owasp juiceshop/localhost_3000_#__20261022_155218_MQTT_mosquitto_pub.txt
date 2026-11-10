@@ -1,0 +1,13 @@
+# Log bruto de execucao
+# Scanner: MQTT
+# Ferramenta: mosquitto_pub
+# Alvo: http://localhost
+# Data: 2026-10-22T15:52:18.200027
+======================================================================
+
+Comando: mosquitto_pub -h http -p //localhost -t iot_scanner/test -m scan_probe
+Return code: 1
+--- STDOUT ---
+
+--- STDERR ---
+Error: Bad file descriptor

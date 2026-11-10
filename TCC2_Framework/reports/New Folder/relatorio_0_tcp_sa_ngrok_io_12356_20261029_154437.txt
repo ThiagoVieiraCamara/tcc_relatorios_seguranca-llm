@@ -1,0 +1,212 @@
+<<<JSON>>>
+{
+    "alvo": "0.tcp.sa.ngrok.io:12356",
+    "data_analise": "29/10/2026 15:44",
+    "dados_truncados": false,
+    "quantidade_vulnerabilidades": 7,
+    "distribuicao_severidade": {
+        "Critica": 0,
+        "Alta": 1,
+        "Media": 3,
+        "Baixa": 2,
+        "Informativa": 0,
+        "Nao determinada": 0
+    },
+    "vulnerabilidades": [
+        {
+            "id": "VULN-001",
+            "id_origem": "Header ausente: Content-Security-Policy",
+            "ferramenta_origem": "HTTP",
+            "nome": "Header ausente: Content-Security-Policy",
+            "categoria": "Web/API",
+            "status": "confirmada",
+            "severidade": "Alta",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": null,
+            "identificadores": [],
+            "evidencia": null,
+            "fonte_evidencia": "vulnerabilidades",
+            "impacto": "A ausência da diretiva Content-Security-Policy (CSP) torna o dispositivo vulnerável a ataques de Cross-Site Scripting (XSS) e outras injeções de código, permitindo que um atacante injete scripts maliciosos nas páginas exibidas pelo dispositivo.",
+            "mitigacao": "Implementar o header HTTP Content-Security-Policy com políticas adequadas para restringir as fontes de conteúdo confiáveis e prevenir a execução de scripts não autorizados.",
+            "referencias_normativas": []
+        },
+        {
+            "id": "VULN-002",
+            "id_origem": "Header ausente: Strict-Transport-Security",
+            "ferramenta_origem": "HTTP",
+            "nome": "Header ausente: Strict-Transport-Security",
+            "categoria": "Web/API",
+            "status": "confirmada",
+            "severidade": "Media",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": null,
+            "identificadores": [],
+            "evidencia": null,
+            "fonte_evidencia": "vulnerabilidades",
+            "impacto": "A ausência do header Strict-Transport-Security (HSTS) expõe o dispositivo a ataques de downgrade de protocolo, onde um atacante pode forçar a comunicação a ser feita via HTTP em vez de HTTPS, interceptando o tráfego.",
+            "mitigacao": "Configurar o servidor para enviar o header HTTP Strict-Transport-Security com uma diretiva de tempo de vida (max-age) adequada para forçar o uso de conexões HTTPS.",
+            "referencias_normativas": []
+        },
+        {
+            "id": "VULN-003",
+            "id_origem": "Header ausente: Referrer-Policy",
+            "ferramenta_origem": "HTTP",
+            "nome": "Header ausente: Referrer-Policy",
+            "categoria": "Web/API",
+            "status": "confirmada",
+            "severidade": "Baixa",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": null,
+            "identificadores": [],
+            "evidencia": null,
+            "fonte_evidencia": "vulnerabilidades",
+            "impacto": "A ausência de uma política de Referrer pode levar à exposição de informações confidenciais sobre a origem da requisição (referrer) para outros sites, caso não haja outras medidas de segurança em vigor.",
+            "mitigacao": "Implementar o header HTTP Referrer-Policy para controlar quais informações de referência são enviadas com as requisições.",
+            "referencias_normativas": []
+        },
+        {
+            "id": "VULN-004",
+            "id_origem": "Header ausente: Permissions-Policy",
+            "ferramenta_origem": "HTTP",
+            "nome": "Header ausente: Permissions-Policy",
+            "categoria": "Web/API",
+            "status": "confirmada",
+            "severidade": "Baixa",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": null,
+            "identificadores": [],
+            "evidencia": null,
+            "fonte_evidencia": "vulnerabilidades",
+            "impacto": "A ausência da diretiva Permissions-Policy (anteriormente Feature-Policy) impede o controle granular sobre quais recursos do navegador e APIs o site pode utilizar, potencialmente permitindo o uso de recursos indesejados.",
+            "mitigacao": "Configurar o header HTTP Permissions-Policy para especificar quais recursos e APIs do navegador o dispositivo pode acessar.",
+            "referencias_normativas": []
+        },
+        {
+            "id": "VULN-005",
+            "id_origem": "CORS permissivo",
+            "ferramenta_origem": "HTTP",
+            "nome": "CORS permissivo",
+            "categoria": "Web/API",
+            "status": "confirmada",
+            "severidade": "Media",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": null,
+            "identificadores": [],
+            "evidencia": "Access-Control-Allow-Origin: *",
+            "fonte_evidencia": "dados_brutos",
+            "impacto": "A configuração permissiva de CORS com 'Access-Control-Allow-Origin: *' permite que qualquer origem (qualquer site ou script malicioso) realize requisições para este serviço, o que pode ser explorado para acessar dados sensíveis ou realizar ações não autorizadas em nome do usuário.",
+            "mitigacao": "Restringir o valor do header 'Access-Control-Allow-Origin' para permitir apenas as origens confiáveis que necessitam de acesso.",
+            "referencias_normativas": []
+        },
+        {
+            "id": "VULN-006",
+            "id_origem": "Metodo HTTP habilitado: PUT",
+            "ferramenta_origem": "HTTP",
+            "nome": "Metodo HTTP habilitado: PUT",
+            "categoria": "Web/API",
+            "status": "confirmada",
+            "severidade": "Media",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": null,
+            "identificadores": [],
+            "evidencia": "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE",
+            "fonte_evidencia": "dados_brutos",
+            "impacto": "A habilitação do método HTTP PUT pode permitir que um atacante realize o upload arbitrário de arquivos para o servidor, potencialmente sobrescrevendo arquivos existentes ou injetando conteúdo malicioso.",
+            "mitigacao": "Desabilitar métodos HTTP que não são estritamente necessários, como o PUT, ou restringir o seu uso a caminhos específicos e com autenticação adequada.",
+            "referencias_normativas": []
+        },
+        {
+            "id": "VULN-007",
+            "id_origem": "Metodo HTTP habilitado: DELETE",
+            "ferramenta_origem": "HTTP",
+            "nome": "Metodo HTTP habilitado: DELETE",
+            "categoria": "Web/API",
+            "status": "confirmada",
+            "severidade": "Media",
+            "origem_severidade": "ferramenta",
+            "justificativa_severidade": null,
+            "identificadores": [],
+            "evidencia": "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE",
+            "fonte_evidencia": "dados_brutos",
+            "impacto": "A habilitação do método HTTP DELETE pode permitir que um atacante remova recursos críticos ou dados do sistema, levando à indisponibilidade de serviços ou perda de informações.",
+            "mitigacao": "Desabilitar métodos HTTP que não são estritamente necessários, como o DELETE, ou restringir o seu uso a caminhos específicos e com autenticação adequada.",
+            "referencias_normativas": []
+        }
+    ],
+    "observacoes_nao_confirmadas": [],
+    "limitacoes": [
+        "O scanner Nmap falhou ao resolver o alvo '0.tcp.sa.ngrok.io:12356', indicando que o alvo pode não estar acessível ou o DNS falhou na resolução.",
+        "O campo 'evidencia' para as vulnerabilidades 'Header ausente: Content-Security-Policy', 'Header ausente: Strict-Transport-Security', 'Header ausente: Referrer-Policy' e 'Header ausente: Permissions-Policy' foi definido como null, pois não há evidência literal nos dados brutos que suporte a sua presença ou ausência. As descrições foram extraídas da lista de vulnerabilidades fornecida."
+    ]
+}
+<<<FIM_JSON>>>
+<<<RELATORIO>>>
+1. SUMARIO EXECUTIVO
+   * O alvo analisado foi 0.tcp.sa.ngrok.io na porta 12356. Foram detectados serviços HTTP. O scanner Nmap falhou na resolução do alvo, indicando potenciais problemas de acessibilidade ou DNS.
+   * Foram identificadas 7 vulnerabilidades. A distribuição de severidade é: Alta (1), Média (3), Baixa (2).
+   * Todas as 7 vulnerabilidades foram confirmadas com base nos dados fornecidos.
+
+2. ANALISE DE RISCOS
+   * **Nome:** Header ausente: Content-Security-Policy
+     **Categoria:** Web/API
+     **Severidade:** Alta (ferramenta)
+     **Status:** confirmada
+     **Evidencia:** null
+     **Risco no contexto de IoT:** A ausência da diretiva Content-Security-Policy (CSP) torna o dispositivo vulnerável a ataques de Cross-Site Scripting (XSS) e outras injeções de código, permitindo que um atacante injete scripts maliciosos nas páginas exibidas pelo dispositivo.
+
+   * **Nome:** Header ausente: Strict-Transport-Security
+     **Categoria:** Web/API
+     **Severidade:** Média (ferramenta)
+     **Status:** confirmada
+     **Evidencia:** null
+     **Risco no contexto de IoT:** A ausência do header Strict-Transport-Security (HSTS) expõe o dispositivo a ataques de downgrade de protocolo, onde um atacante pode forçar a comunicação a ser feita via HTTP em vez de HTTPS, interceptando o tráfego.
+
+   * **Nome:** Header ausente: Referrer-Policy
+     **Categoria:** Web/API
+     **Severidade:** Baixa (ferramenta)
+     **Status:** confirmada
+     **Evidencia:** null
+     **Risco no contexto de IoT:** A ausência de uma política de Referrer pode levar à exposição de informações confidenciais sobre a origem da requisição (referrer) para outros sites, caso não haja outras medidas de segurança em vigor.
+
+   * **Nome:** Header ausente: Permissions-Policy
+     **Categoria:** Web/API
+     **Severidade:** Baixa (ferramenta)
+     **Status:** confirmada
+     **Evidencia:** null
+     **Risco no contexto de IoT:** A ausência da diretiva Permissions-Policy (anteriormente Feature-Policy) impede o controle granular sobre quais recursos do navegador e APIs o site pode utilizar, potencialmente permitindo o uso de recursos indesejados.
+
+   * **Nome:** CORS permissivo
+     **Categoria:** Web/API
+     **Severidade:** Média (ferramenta)
+     **Status:** confirmada
+     **Evidencia:** "Access-Control-Allow-Origin: *"
+     **Risco no contexto de IoT:** A configuração permissiva de CORS com 'Access-Control-Allow-Origin: *' permite que qualquer origem (qualquer site ou script malicioso) realize requisições para este serviço, o que pode ser explorado para acessar dados sensíveis ou realizar ações não autorizadas em nome do usuário.
+
+   * **Nome:** Metodo HTTP habilitado: PUT
+     **Categoria:** Web/API
+     **Severidade:** Média (ferramenta)
+     **Status:** confirmada
+     **Evidencia:** "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE"
+     **Risco no contexto de IoT:** A habilitação do método HTTP PUT pode permitir que um atacante realize o upload arbitrário de arquivos para o servidor, potencialmente sobrescrevendo arquivos existentes ou injetando conteúdo malicioso.
+
+   * **Nome:** Metodo HTTP habilitado: DELETE
+     **Categoria:** Web/API
+     **Severidade:** Média (ferramenta)
+     **Status:** confirmada
+     **Evidencia:** "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE"
+     **Risco no contexto de IoT:** A habilitação do método HTTP DELETE pode permitir que um atacante remova recursos críticos ou dados do sistema, levando à indisponibilidade de serviços ou perda de informações.
+
+3. RECOMENDACOES DE MITIGACAO
+   * **Header ausente: Content-Security-Policy:** Implementar o header HTTP Content-Security-Policy com políticas adequadas para restringir as fontes de conteúdo confiáveis e prevenir a execução de scripts não autorizados.
+   * **CORS permissivo:** Restringir o valor do header 'Access-Control-Allow-Origin' para permitir apenas as origens confiáveis que necessitam de acesso.
+   * **Metodo HTTP habilitado: PUT:** Desabilitar métodos HTTP que não são estritamente necessários, como o PUT, ou restringir o seu uso a caminhos específicos e com autenticação adequada.
+   * **Metodo HTTP habilitado: DELETE:** Desabilitar métodos HTTP que não são estritamente necessários, como o DELETE, ou restringir o seu uso a caminhos específicos e com autenticação adequada.
+   * **Header ausente: Strict-Transport-Security:** Configurar o servidor para enviar o header HTTP Strict-Transport-Security com uma diretiva de tempo de vida (max-age) adequada para forçar o uso de conexões HTTPS.
+   * **Header ausente: Referrer-Policy:** Implementar o header HTTP Referrer-Policy para controlar quais informações de referência são enviadas com as requisições.
+   * **Header ausente: Permissions-Policy:** Configurar o header HTTP Permissions-Policy para especificar quais recursos e APIs do navegador o dispositivo pode acessar.
+
+4. CONSIDERACOES FINAIS
+   * A análise identificou a presença de diversas vulnerabilidades relacionadas à configuração de segurança de cabeçalhos HTTP e métodos de requisição permitidos. A ausência de cabeçalhos como Content-Security-Policy e Strict-Transport-Security aumenta o risco de ataques como XSS e ataques de downgrade. A configuração permissiva de CORS e a habilitação de métodos HTTP como PUT e DELETE também representam riscos significativos.
+   * **Limitações:** O scanner Nmap falhou ao resolver o alvo, o que pode indicar problemas de conectividade ou resolução de DNS. Para algumas vulnerabilidades de cabeçalho ausente, não foi possível encontrar evidência literal nos dados brutos. A ausência de achados adicionais não garante a ausência de outras vulnerabilidades no dispositivo.
+   * **Observações Não Confirmadas:** Nenhuma observação não confirmada foi registrada.
+<<<FIM_RELATORIO>>>

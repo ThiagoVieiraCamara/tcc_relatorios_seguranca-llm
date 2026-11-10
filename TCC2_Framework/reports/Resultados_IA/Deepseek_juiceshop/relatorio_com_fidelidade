@@ -1,0 +1,203 @@
+    SUMARIO EXECUTIVO
+    O alvo analisado foi 0.tcp.sa.ngrok.io:12356. Os dados brutos registram servico HTTP por meio de requisicoes GET e OPTIONS, com respostas 200 OK e 204 No Content, respectivamente. Foram identificadas 7 vulnerabilidades na lista oficial: 1 Alta, 4 Media e 2 Baixa. Desse total, 3 foram confirmadas com evidencia literal nos dados brutos e 4 foram marcadas como nao confirmadas por ausencia de evidencia literal.
+
+    ANALISE DE RISCOS
+
+    Header ausente: Content-Security-Policy — Web/API — Alta (ferramenta) — nao_confirmada. Evidencia: "Nao determinado pelos dados fornecidos". Risco: a ausencia de CSP pode reduzir a capacidade de o navegador restringir a execucao de scripts e conteudo injetado, mas nao ha evidencia literal nos dados fornecidos que confirme a configuracao do alvo para este item.
+
+    Header ausente: Strict-Transport-Security — Web/API — Media (ferramenta) — nao_confirmada. Evidencia: "Nao determinado pelos dados fornecidos". Risco: a ausencia de HSTS pode expor o servico a tentativas de downgrade de protocolo, mas nao ha evidencia literal nos dados fornecidos que confirme a configuracao do alvo para este item.
+
+    Header ausente: Referrer-Policy — Web/API — Baixa (ferramenta) — nao_confirmada. Evidencia: "Nao determinado pelos dados fornecidos". Risco: a ausencia de Referrer-Policy pode expor informacoes de referencia em requisicoes, mas nao ha evidencia literal nos dados fornecidos que confirme a configuracao do alvo para este item.
+
+    Header ausente: Permissions-Policy — Web/API — Baixa (ferramenta) — nao_confirmada. Evidencia: "Nao determinado pelos dados fornecidos". Risco: a ausencia de Permissions-Policy impede o controle granular sobre recursos do navegador, mas nao ha evidencia literal nos dados fornecidos que confirme a configuracao do alvo para este item.
+
+    CORS permissivo — Web/API — Media (ferramenta) — confirmada. Evidencia: "Access-Control-Allow-Origin: *". Risco: pode permitir que qualquer origem realize requisicoes e leia respostas do servico, sujeito a outras protecoes existentes.
+
+    Metodo HTTP habilitado: PUT — Web/API — Media (ferramenta) — confirmada. Evidencia: "Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE". Risco: pode permitir operacoes de escrita se a aplicacao aceitar PUT sem controles adicionais.
+
+    Metodo HTTP habilitado: DELETE — Web/API — Media (ferramenta) — confirmada. Evidencia: "Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE". Risco: pode permitir remocao de recursos se a aplicacao aceitar DELETE sem controles adicionais.
+
+    RECOMENDACOES DE MITIGACAO
+
+    Header ausente: Content-Security-Policy: configurar uma politica de Content-Security-Policy adequada no servidor web, revisando as fontes de script e conteudo permitidas.
+
+    Header ausente: Strict-Transport-Security: configurar o header Strict-Transport-Security em respostas HTTPS, conforme a politica do servico.
+
+    CORS permissivo: restringir Access-Control-Allow-Origin a origens confiaveis e evitar o uso de '*' quando houver dados sensiveis.
+
+    Metodo HTTP habilitado: PUT: desabilitar metodos HTTP nao necessarios e aplicar autenticacao e autorizacao adequadas.
+
+    Metodo HTTP habilitado: DELETE: desabilitar metodos HTTP nao necessarios e aplicar autenticacao e autorizacao adequadas.
+
+    Header ausente: Referrer-Policy: definir uma Referrer-Policy restritiva nas respostas do servidor.
+
+    Header ausente: Permissions-Policy: definir uma Permissions-Policy restringindo os recursos do navegador que nao sao necessarios.
+
+    CONSIDERACOES FINAIS
+    Os resultados indicam a presenca de servico HTTP no alvo e de configuracao CORS permissiva, com os metodos PUT e DELETE listados nos dados brutos. Quatro itens relativos a headers ausentes permanecem nao confirmados por falta de evidencia literal. As limitacoes incluem falha de resolucao do Nmap, timeout no teste MQTT, retorno vazio do Dalfox e ausencia de dados sobre tipo, fabricante, modelo ou firmware do dispositivo. A ausencia de achados em um scanner nao comprova ausencia de vulnerabilidades. Observacoes nao confirmadas: falha de resolucao do Nmap; timeout MQTT; descoberta de 29 endpoints pelo katana sem achado XSS pelo Dalfox; e divergencia entre a evidencia textual da lista oficial e o header literal observado nos dados brutos para PUT/DELETE.
+
+{
+"alvo": "0.tcp.sa.ngrok.io:12356",
+"afirmacoes": [
+{
+"afirmacao": "O alvo analisado foi 0.tcp.sa.ngrok.io:12356.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "0.tcp.sa.ngrok.io:12356",
+"justificativa": "O endereco aparece nos logs e na lista oficial."
+},
+{
+"afirmacao": "Foi detectado servico HTTP no alvo.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "GET http://0.tcp.sa.ngrok.io:12356",
+"justificativa": "O log de requests_get registra requisicao GET ao alvo."
+},
+{
+"afirmacao": "A requisicao GET retornou status 200 OK.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "Status: 200 OK",
+"justificativa": "O status 200 OK esta literalmente no log de requests_get."
+},
+{
+"afirmacao": "A requisicao OPTIONS retornou status 204 No Content.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "Status: 204 No Content",
+"justificativa": "O status 204 No Content esta literalmente no log de requests_options."
+},
+{
+"afirmacao": "O header Access-Control-Allow-Origin esta configurado como '*'.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "Access-Control-Allow-Origin: *",
+"justificativa": "O header aparece literalmente nas respostas GET e OPTIONS."
+},
+{
+"afirmacao": "Access-Control-Allow-Methods lista GET,HEAD,PUT,PATCH,POST,DELETE.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE",
+"justificativa": "O header aparece literalmente na resposta OPTIONS."
+},
+{
+"afirmacao": "O metodo HTTP PUT esta habilitado na lista de metodos permitidos.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE",
+"justificativa": "PUT aparece literalmente na lista de metodos permitidos."
+},
+{
+"afirmacao": "O metodo HTTP DELETE esta habilitado na lista de metodos permitidos.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE",
+"justificativa": "DELETE aparece literalmente na lista de metodos permitidos."
+},
+{
+"afirmacao": "A lista oficial contem 7 vulnerabilidades.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "7",
+"justificativa": "A lista oficial fornecida contem 7 itens."
+},
+{
+"afirmacao": "A distribuicao de severidade pela lista oficial e Alta 1, Media 4 e Baixa 2.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "Alta: 1; Media: 4; Baixa: 2",
+"justificativa": "A contagem dos itens da lista oficial resulta em 1 Alta, 4 Media e 2 Baixa."
+},
+{
+"afirmacao": "A vulnerabilidade Header ausente: Content-Security-Policy tem severidade Alta.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "Header ausente: Content-Security-Policy",
+"justificativa": "O item e a severidade Alta constam na lista oficial."
+},
+{
+"afirmacao": "A vulnerabilidade Header ausente: Strict-Transport-Security tem severidade Media.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "Header ausente: Strict-Transport-Security",
+"justificativa": "O item e a severidade Media constam na lista oficial."
+},
+{
+"afirmacao": "A vulnerabilidade Header ausente: Referrer-Policy tem severidade Baixa.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "Header ausente: Referrer-Policy",
+"justificativa": "O item e a severidade Baixa constam na lista oficial."
+},
+{
+"afirmacao": "A vulnerabilidade Header ausente: Permissions-Policy tem severidade Baixa.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "Header ausente: Permissions-Policy",
+"justificativa": "O item e a severidade Baixa constam na lista oficial."
+},
+{
+"afirmacao": "A vulnerabilidade CORS permissivo tem severidade Media.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "CORS permissivo",
+"justificativa": "O item e a severidade Media constam na lista oficial."
+},
+{
+"afirmacao": "A vulnerabilidade Metodo HTTP habilitado: PUT tem severidade Media.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "Metodo HTTP habilitado: PUT",
+"justificativa": "O item e a severidade Media constam na lista oficial."
+},
+{
+"afirmacao": "A vulnerabilidade Metodo HTTP habilitado: DELETE tem severidade Media.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "Metodo HTTP habilitado: DELETE",
+"justificativa": "O item e a severidade Media constam na lista oficial."
+},
+{
+"afirmacao": "O Nmap falhou ao resolver o alvo.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "Failed to resolve "0.tcp.sa.ngrok.io:12356".",
+"justificativa": "A mensagem de falha de resolucao esta literalmente no log do Nmap."
+},
+{
+"afirmacao": "O teste mosquitto_pub retornou Return code 14.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "Return code: 14",
+"justificativa": "O codigo de retorno esta literalmente no log do mosquitto_pub."
+},
+{
+"afirmacao": "O teste mosquitto_sub registrou TIMEOUT atingido.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "TIMEOUT atingido.",
+"justificativa": "A mensagem de timeout esta literalmente no log do mosquitto_sub."
+},
+{
+"afirmacao": "O katana descobriu 29 endpoints.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "Total descoberto: 29",
+"justificativa": "O total esta literalmente no log de endpoints descobertos."
+},
+{
+"afirmacao": "O Dalfox retornou estruturas vazias para os endpoints testados.",
+"classificacao": "suportada",
+"suportada_pelos_dados": true,
+"evidencia": "[{}]",
+"justificativa": "As saidas do Dalfox listadas contem [{}]."
+}
+],
+"resumo": {
+"total_afirmacoes": 22,
+"afirmacoes_suportadas": 22,
+"afirmacoes_nao_suportadas": 0,
+"afirmacoes_nao_verificaveis": 0,
+"taxa_fidelidade": 1.0
+}

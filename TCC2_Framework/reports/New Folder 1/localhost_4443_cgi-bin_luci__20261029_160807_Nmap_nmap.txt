@@ -1,0 +1,15 @@
+# Log bruto de execucao
+# Scanner: Nmap
+# Ferramenta: nmap
+# Alvo: https://localhost:4443/cgi-bin/luci/
+# Data: 2026-10-29T16:08:08.111160
+======================================================================
+
+Comando: nmap -sV -sC -Pn -T4 --open -p 1-10000 https://localhost:4443/cgi-bin/luci/
+
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-10-29 16:08 -0400
+Nmap done: 0 IP addresses (0 hosts up) scanned in 0.11 seconds
+
+--- STDERR ---
+Unable to split netmask from target expression: "https://localhost:4443/cgi-bin/luci/"
+WARNING: No targets were specified, so 0 hosts scanned.

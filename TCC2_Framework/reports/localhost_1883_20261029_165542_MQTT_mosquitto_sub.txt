@@ -1,0 +1,10 @@
+# Log bruto de execucao
+# Scanner: MQTT
+# Ferramenta: mosquitto_sub
+# Alvo: localhost:1883
+# Data: 2026-10-29T16:55:57.465500
+======================================================================
+
+TIMEOUT atingido.
+
+TIMEOUT atingido.

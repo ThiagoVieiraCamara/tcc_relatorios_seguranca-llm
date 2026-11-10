@@ -1,0 +1,15 @@
+# Log bruto de execucao
+# Scanner: Nmap
+# Ferramenta: nmap
+# Alvo: 0.tcp.sa.ngrok.io:12356
+# Data: 2026-10-29T15:43:29.613553
+======================================================================
+
+Comando: nmap -sV -sC -Pn -T4 --open -p 1-10000 0.tcp.sa.ngrok.io:12356
+
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-10-29 15:43 -0400
+Nmap done: 0 IP addresses (0 hosts up) scanned in 0.61 seconds
+
+--- STDERR ---
+Failed to resolve "0.tcp.sa.ngrok.io:12356".
+WARNING: No targets were specified, so 0 hosts scanned.

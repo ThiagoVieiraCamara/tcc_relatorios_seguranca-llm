@@ -1,0 +1,8 @@
+# Log bruto de execucao
+# Scanner: HTTP
+# Ferramenta: requests_get
+# Alvo: http://localhost:1883
+# Data: 2026-10-29T16:55:47.442812
+======================================================================
+
+ERRO: Falha ao acessar http://localhost:1883: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))

@@ -1,0 +1,13 @@
+# Log bruto de execucao
+# Scanner: XSS
+# Ferramenta: katana
+# Alvo: http://localhost:1883
+# Data: 2026-10-29T16:56:10.797389
+======================================================================
+
+Comando: katana -u http://localhost:1883 -d 2 -jc -silent -timeout 10
+
+--- STDOUT ---
+http://localhost:1883
+
+--- STDERR ---

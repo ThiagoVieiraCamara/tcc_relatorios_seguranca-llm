@@ -1,0 +1,165 @@
+# Log bruto de execucao
+# Scanner: XSS
+# Ferramenta: dalfox
+# Alvo: http://localhost:3000/#/
+# Data: 2026-10-22T15:53:27.873079
+======================================================================
+
+
+--- Dalfox em http://localhost:3000/#/ ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/scripts.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/rolldown-runtime-BoHGiXSq.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/chunk-DBPdFzgj.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/polyfills.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/styles.css ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/chunk-1qQQGal7.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/chunk-Cv2YgWUq.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/main.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/redirect?to=http ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/redirect?to=https ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/wallet-web3.module-wTOnhm_r.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/faucet.module-C29hbfVs.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/application/vnd.openxmlformats-officedocument.wordprocessingml.do ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/web3-sandbox.module-BmlpKNfJ.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/application/vnd.ms-word.do ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/about.component-CqdnxQ-q.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/coding-challenge-page.component-Sl0Kca01.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/recycle.component-BGn9yQWr.js ---
+STDOUT: [
+{}]
+
+STDERR: 
+
+
+
+--- Dalfox em http://localhost:3000/confetti-CBIxuiwe.js ---
+STDOUT: [
+{}]
+
+STDERR: 

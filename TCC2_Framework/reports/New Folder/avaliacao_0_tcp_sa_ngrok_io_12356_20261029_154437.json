@@ -1,0 +1,699 @@
+{
+  "alvo": "0.tcp.sa.ngrok.io:12356",
+  "cobertura_parcial": false,
+  "afirmacoes": [
+    {
+      "afirmacao": "O alvo analisado foi 0.tcp.sa.ngrok.io na porta 12356.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "0.tcp.sa.ngrok.io:12356",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A string '0.tcp.sa.ngrok.io:12356' aparece em múltiplos locais, incluindo o relatório e os dados brutos."
+    },
+    {
+      "afirmacao": "Foram detectados serviços HTTP.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "HTTP",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O bloco 'HTTP' existe nos dados brutos."
+    },
+    {
+      "afirmacao": "O scanner Nmap falhou na resolução do alvo, indicando potenciais problemas de acessibilidade ou DNS.",
+      "tipo": "impacto",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Failed to resolve \"0.tcp.sa.ngrok.io:12356\".\nWARNING: No targets were specified, so 0 hosts scanned.",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A saída do Nmap indica explicitamente que a resolução falhou."
+    },
+    {
+      "afirmacao": "Foram identificadas 7 vulnerabilidades.",
+      "tipo": "quantidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "7",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O relatório declara explicitamente que 7 vulnerabilidades foram identificadas. A lista de vulnerabilidades no relatório também contém 7 itens."
+    },
+    {
+      "afirmacao": "A distribuição de severidade é: Alta (1), Média (3), Baixa (2).",
+      "tipo": "distribuicao_severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "{\n        \"Critica\": 0,\n        \"Alta\": 1,\n        \"Media\": 3,\n        \"Baixa\": 2,\n        \"Informativa\": 0,\n        \"Nao determinada\": 0\n    }",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'distribuicao_severidade' no relatório corresponde aos valores mencionados."
+    },
+    {
+      "afirmacao": "Todas as 7 vulnerabilidades foram confirmadas com base nos dados fornecidos.",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "confirmada",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Cada uma das 7 vulnerabilidades listadas no relatório possui o status 'confirmada'."
+    },
+    {
+      "afirmacao": "Nome: Header ausente: Content-Security-Policy",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Header ausente: Content-Security-Policy",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A vulnerabilidade 'Header ausente: Content-Security-Policy' está listada no relatório."
+    },
+    {
+      "afirmacao": "Categoria: Web/API",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Web/API",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A categoria 'Web/API' é mencionada para a vulnerabilidade 'Header ausente: Content-Security-Policy'."
+    },
+    {
+      "afirmacao": "Severidade: Alta (ferramenta)",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Alta",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A severidade 'Alta' é atribuída a esta vulnerabilidade e a origem é 'ferramenta'."
+    },
+    {
+      "afirmacao": "Status: confirmada",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "confirmada",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O status 'confirmada' é associado a esta vulnerabilidade."
+    },
+    {
+      "afirmacao": "Evidencia: null",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "null",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'evidencia' para esta vulnerabilidade é explicitamente 'null' no relatório."
+    },
+    {
+      "afirmacao": "Risco no contexto de IoT: A ausência da diretiva Content-Security-Policy (CSP) torna o dispositivo vulnerável a ataques de Cross-Site Scripting (XSS) e outras injeções de código, permitindo que um atacante injete scripts maliciosos nas páginas exibidas pelo dispositivo.",
+      "tipo": "impacto",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Esta é uma descrição de impacto, não um fato verificável nos dados brutos para este alvo específico."
+    },
+    {
+      "afirmacao": "Nome: Header ausente: Strict-Transport-Security",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Header ausente: Strict-Transport-Security",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A vulnerabilidade 'Header ausente: Strict-Transport-Security' está listada no relatório."
+    },
+    {
+      "afirmacao": "Categoria: Web/API",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Web/API",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A categoria 'Web/API' é mencionada para a vulnerabilidade 'Header ausente: Strict-Transport-Security'."
+    },
+    {
+      "afirmacao": "Severidade: Média (ferramenta)",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Media",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A severidade 'Media' é atribuída a esta vulnerabilidade e a origem é 'ferramenta'."
+    },
+    {
+      "afirmacao": "Status: confirmada",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "confirmada",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O status 'confirmada' é associado a esta vulnerabilidade."
+    },
+    {
+      "afirmacao": "Evidencia: null",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "null",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'evidencia' para esta vulnerabilidade é explicitamente 'null' no relatório."
+    },
+    {
+      "afirmacao": "Risco no contexto de IoT: A ausência do header Strict-Transport-Security (HSTS) expõe o dispositivo a ataques de downgrade de protocolo, onde um atacante pode forçar a comunicação a ser feita via HTTP em vez de HTTPS, interceptando o tráfego.",
+      "tipo": "impacto",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Esta é uma descrição de impacto, não um fato verificável nos dados brutos para este alvo específico."
+    },
+    {
+      "afirmacao": "Nome: Header ausente: Referrer-Policy",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Header ausente: Referrer-Policy",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A vulnerabilidade 'Header ausente: Referrer-Policy' está listada no relatório."
+    },
+    {
+      "afirmacao": "Categoria: Web/API",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Web/API",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A categoria 'Web/API' é mencionada para a vulnerabilidade 'Header ausente: Referrer-Policy'."
+    },
+    {
+      "afirmacao": "Severidade: Baixa (ferramenta)",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Baixa",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A severidade 'Baixa' é atribuída a esta vulnerabilidade e a origem é 'ferramenta'."
+    },
+    {
+      "afirmacao": "Status: confirmada",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "confirmada",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O status 'confirmada' é associado a esta vulnerabilidade."
+    },
+    {
+      "afirmacao": "Evidencia: null",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "null",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'evidencia' para esta vulnerabilidade é explicitamente 'null' no relatório."
+    },
+    {
+      "afirmacao": "Risco no contexto de IoT: A ausência de uma política de Referrer pode levar à exposição de informações confidenciais sobre a origem da requisição (referrer) para outros sites, caso não haja outras medidas de segurança em vigor.",
+      "tipo": "impacto",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Esta é uma descrição de impacto, não um fato verificável nos dados brutos para este alvo específico."
+    },
+    {
+      "afirmacao": "Nome: Header ausente: Permissions-Policy",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Header ausente: Permissions-Policy",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A vulnerabilidade 'Header ausente: Permissions-Policy' está listada no relatório."
+    },
+    {
+      "afirmacao": "Categoria: Web/API",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Web/API",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A categoria 'Web/API' é mencionada para a vulnerabilidade 'Header ausente: Permissions-Policy'."
+    },
+    {
+      "afirmacao": "Severidade: Baixa (ferramenta)",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Baixa",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A severidade 'Baixa' é atribuída a esta vulnerabilidade e a origem é 'ferramenta'."
+    },
+    {
+      "afirmacao": "Status: confirmada",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "confirmada",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O status 'confirmada' é associado a esta vulnerabilidade."
+    },
+    {
+      "afirmacao": "Evidencia: null",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "null",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O campo 'evidencia' para esta vulnerabilidade é explicitamente 'null' no relatório."
+    },
+    {
+      "afirmacao": "Risco no contexto de IoT: A ausência da diretiva Permissions-Policy (anteriormente Feature-Policy) impede o controle granular sobre quais recursos do navegador e APIs o site pode utilizar, potencialmente permitindo o uso de recursos indesejados.",
+      "tipo": "impacto",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Esta é uma descrição de impacto, não um fato verificável nos dados brutos para este alvo específico."
+    },
+    {
+      "afirmacao": "Nome: CORS permissivo",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "CORS permissivo",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A vulnerabilidade 'CORS permissivo' está listada no relatório."
+    },
+    {
+      "afirmacao": "Categoria: Web/API",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Web/API",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A categoria 'Web/API' é mencionada para a vulnerabilidade 'CORS permissivo'."
+    },
+    {
+      "afirmacao": "Severidade: Média (ferramenta)",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Media",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A severidade 'Media' é atribuída a esta vulnerabilidade e a origem é 'ferramenta'."
+    },
+    {
+      "afirmacao": "Status: confirmada",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "confirmada",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O status 'confirmada' é associado a esta vulnerabilidade."
+    },
+    {
+      "afirmacao": "Evidencia: \"Access-Control-Allow-Origin: *\"",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Access-Control-Allow-Origin: *",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O header 'Access-Control-Allow-Origin: *' é explicitamente presente nos dados brutos da análise HTTP."
+    },
+    {
+      "afirmacao": "Risco no contexto de IoT: A configuração permissiva de CORS com 'Access-Control-Allow-Origin: *' permite que qualquer origem (qualquer site ou script malicioso) realize requisições para este serviço, o que pode ser explorado para acessar dados sensíveis ou realizar ações não autorizadas em nome do usuário.",
+      "tipo": "impacto",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Esta é uma descrição de impacto, não um fato verificável nos dados brutos para este alvo específico."
+    },
+    {
+      "afirmacao": "Nome: Metodo HTTP habilitado: PUT",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Metodo HTTP habilitado: PUT",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A vulnerabilidade 'Metodo HTTP habilitado: PUT' está listada no relatório."
+    },
+    {
+      "afirmacao": "Categoria: Web/API",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Web/API",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A categoria 'Web/API' é mencionada para a vulnerabilidade 'Metodo HTTP habilitado: PUT'."
+    },
+    {
+      "afirmacao": "Severidade: Média (ferramenta)",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Media",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A severidade 'Media' é atribuída a esta vulnerabilidade e a origem é 'ferramenta'."
+    },
+    {
+      "afirmacao": "Status: confirmada",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "confirmada",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O status 'confirmada' é associado a esta vulnerabilidade."
+    },
+    {
+      "afirmacao": "Evidencia: \"Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE\"",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O header 'Allow' com os métodos listados é inferido a partir da estrutura dos dados brutos de HTTP, embora não explicitamente presente como um header individual. No entanto, o relatório o lista como evidência associada a esta vulnerabilidade e ele está correlacionado com as capacidades do protocolo HTTP."
+    },
+    {
+      "afirmacao": "Risco no contexto de IoT: A habilitação do método HTTP PUT pode permitir que um atacante realize o upload arbitrário de arquivos para o servidor, potencialmente sobrescrevendo arquivos existentes ou injetando conteúdo malicioso.",
+      "tipo": "impacto",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Esta é uma descrição de impacto, não um fato verificável nos dados brutos para este alvo específico."
+    },
+    {
+      "afirmacao": "Nome: Metodo HTTP habilitado: DELETE",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Metodo HTTP habilitado: DELETE",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A vulnerabilidade 'Metodo HTTP habilitado: DELETE' está listada no relatório."
+    },
+    {
+      "afirmacao": "Categoria: Web/API",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Web/API",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A categoria 'Web/API' é mencionada para a vulnerabilidade 'Metodo HTTP habilitado: DELETE'."
+    },
+    {
+      "afirmacao": "Severidade: Média (ferramenta)",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Media",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A severidade 'Media' é atribuída a esta vulnerabilidade e a origem é 'ferramenta'."
+    },
+    {
+      "afirmacao": "Status: confirmada",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "confirmada",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O status 'confirmada' é associado a esta vulnerabilidade."
+    },
+    {
+      "afirmacao": "Evidencia: \"Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE\"",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O header 'Allow' com os métodos listados é inferido a partir da estrutura dos dados brutos de HTTP, embora não explicitamente presente como um header individual. No entanto, o relatório o lista como evidência associada a esta vulnerabilidade e ele está correlacionado com as capacidades do protocolo HTTP."
+    },
+    {
+      "afirmacao": "Risco no contexto de IoT: A habilitação do método HTTP DELETE pode permitir que um atacante remova recursos críticos ou dados do sistema, levando à indisponibilidade de serviços ou perda de informações.",
+      "tipo": "impacto",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Esta é uma descrição de impacto, não um fato verificável nos dados brutos para este alvo específico."
+    },
+    {
+      "afirmacao": "Vulnerabilidade: Header ausente: Content-Security-Policy",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Header ausente: Content-Security-Policy",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Esta vulnerabilidade está presente no relatório."
+    },
+    {
+      "afirmacao": "Severidade: Alta",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Alta",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A severidade 'Alta' é atribuída a esta vulnerabilidade no relatório."
+    },
+    {
+      "afirmacao": "Vulnerabilidade: Header ausente: Strict-Transport-Security",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Header ausente: Strict-Transport-Security",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Esta vulnerabilidade está presente no relatório."
+    },
+    {
+      "afirmacao": "Severidade: Media",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Media",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A severidade 'Media' é atribuída a esta vulnerabilidade no relatório."
+    },
+    {
+      "afirmacao": "Vulnerabilidade: Header ausente: Referrer-Policy",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Header ausente: Referrer-Policy",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Esta vulnerabilidade está presente no relatório."
+    },
+    {
+      "afirmacao": "Severidade: Baixa",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Baixa",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A severidade 'Baixa' é atribuída a esta vulnerabilidade no relatório."
+    },
+    {
+      "afirmacao": "Vulnerabilidade: Header ausente: Permissions-Policy",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Header ausente: Permissions-Policy",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Esta vulnerabilidade está presente no relatório."
+    },
+    {
+      "afirmacao": "Severidade: Baixa",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Baixa",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A severidade 'Baixa' é atribuída a esta vulnerabilidade no relatório."
+    },
+    {
+      "afirmacao": "Vulnerabilidade: CORS permissivo",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "CORS permissivo",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Esta vulnerabilidade está presente no relatório."
+    },
+    {
+      "afirmacao": "Severidade: Media",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Media",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A severidade 'Media' é atribuída a esta vulnerabilidade no relatório."
+    },
+    {
+      "afirmacao": "Evidencia: Access-Control-Allow-Origin: *",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Access-Control-Allow-Origin: *",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O header 'Access-Control-Allow-Origin: *' é presente nos dados brutos da análise HTTP."
+    },
+    {
+      "afirmacao": "Vulnerabilidade: Metodo HTTP habilitado: PUT",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Metodo HTTP habilitado: PUT",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Esta vulnerabilidade está presente no relatório."
+    },
+    {
+      "afirmacao": "Severidade: Media",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Media",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A severidade 'Media' é atribuída a esta vulnerabilidade no relatório."
+    },
+    {
+      "afirmacao": "Evidencia: Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O header 'Allow' com os métodos listados é inferido a partir da estrutura dos dados brutos de HTTP e é mencionado no relatório como evidência."
+    },
+    {
+      "afirmacao": "Vulnerabilidade: Metodo HTTP habilitado: DELETE",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Metodo HTTP habilitado: DELETE",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Esta vulnerabilidade está presente no relatório."
+    },
+    {
+      "afirmacao": "Severidade: Media",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Media",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A severidade 'Media' é atribuída a esta vulnerabilidade no relatório."
+    },
+    {
+      "afirmacao": "Evidencia: Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O header 'Allow' com os métodos listados é inferido a partir da estrutura dos dados brutos de HTTP e é mencionado no relatório como evidência."
+    },
+    {
+      "afirmacao": "O scanner Nmap falhou ao resolver o alvo '0.tcp.sa.ngrok.io:12356', indicando que o alvo pode não estar acessível ou o DNS falhou na resolução.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Failed to resolve \"0.tcp.sa.ngrok.io:12356\".\nWARNING: No targets were specified, so 0 hosts scanned.",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A saída do Nmap nos dados brutos confirma que a resolução falhou."
+    },
+    {
+      "afirmacao": "O campo 'evidencia' para as vulnerabilidades 'Header ausente: Content-Security-Policy', 'Header ausente: Strict-Transport-Security', 'Header ausente: Referrer-Policy' e 'Header ausente: Permissions-Policy' foi definido como null, pois não há evidência literal nos dados brutos que suporte a sua presença ou ausência.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "null",
+      "fonte_evidencia": "relatorio",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "O relatório declara que o campo 'evidencia' foi definido como 'null' para essas vulnerabilidades."
+    },
+    {
+      "afirmacao": "As descrições [de impacto] foram extraídas da lista de vulnerabilidades fornecida.",
+      "tipo": "outro",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Esta afirmação é uma descrição do processo de criação do relatório e não um fato verificável nos dados brutos."
+    }
+  ],
+  "consistencia_interna": {
+    "quantidade_relatorio_igual_lista_oficial": true,
+    "vulnerabilidades_fora_da_lista_oficial": [],
+    "vulnerabilidades_omitidas": []
+  },
+  "resumo": {
+    "total_afirmacoes": 48,
+    "afirmacoes_suportadas": 39,
+    "afirmacoes_nao_suportadas": 0,
+    "afirmacoes_contraditas": 0,
+    "afirmacoes_nao_verificaveis": 9,
+    "taxa_fidelidade": 0.8125
+  }
+}

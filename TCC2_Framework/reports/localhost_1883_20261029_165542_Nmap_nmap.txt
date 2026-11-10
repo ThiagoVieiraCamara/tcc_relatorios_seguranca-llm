@@ -1,0 +1,15 @@
+# Log bruto de execucao
+# Scanner: Nmap
+# Ferramenta: nmap
+# Alvo: localhost:1883
+# Data: 2026-10-29T16:55:47.439839
+======================================================================
+
+Comando: nmap -sV -sC -Pn -T4 --open -p 1-10000 localhost:1883
+
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-10-29 16:55 -0400
+Nmap done: 0 IP addresses (0 hosts up) scanned in 4.67 seconds
+
+--- STDERR ---
+Failed to resolve "localhost:1883".
+WARNING: No targets were specified, so 0 hosts scanned.

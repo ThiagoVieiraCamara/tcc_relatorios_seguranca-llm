@@ -1,0 +1,629 @@
+{
+  "alvo": "http://0.tcp.sa.ngrok.io:12356",
+  "cobertura_parcial": false,
+  "afirmacoes": [
+    {
+      "afirmacao": "O relatorio registra 7 vulnerabilidades.",
+      "tipo": "quantidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"tipo\": \"Metodo HTTP habilitado: DELETE\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "A lista oficial contem 7 itens; o trecho e o ultimo deles."
+    },
+    {
+      "afirmacao": "Distribuicao por severidade: Alta 1, Media 4, Baixa 2.",
+      "tipo": "quantidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"severidade\": \"Alta\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Contagem dos campos severidade da lista oficial: 1 Alta, 4 Media, 2 Baixa."
+    },
+    {
+      "afirmacao": "Existe a vulnerabilidade 'Header ausente: Content-Security-Policy'.",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"tipo\": \"Header ausente: Content-Security-Policy\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Item presente na lista oficial."
+    },
+    {
+      "afirmacao": "A severidade de 'Header ausente: Content-Security-Policy' e Alta, informada pela ferramenta.",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"severidade\": \"Alta\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Valor do campo severidade do item na lista oficial."
+    },
+    {
+      "afirmacao": "Existe a vulnerabilidade 'Header ausente: Strict-Transport-Security'.",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"tipo\": \"Header ausente: Strict-Transport-Security\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Item presente na lista oficial."
+    },
+    {
+      "afirmacao": "A severidade de 'Header ausente: Strict-Transport-Security' e Media, informada pela ferramenta.",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"severidade\": \"Media\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Valor do campo severidade do item na lista oficial."
+    },
+    {
+      "afirmacao": "Existe a vulnerabilidade 'Header ausente: Referrer-Policy'.",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"tipo\": \"Header ausente: Referrer-Policy\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Item presente na lista oficial."
+    },
+    {
+      "afirmacao": "A severidade de 'Header ausente: Referrer-Policy' e Baixa, informada pela ferramenta.",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"severidade\": \"Baixa\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Valor do campo severidade do item na lista oficial."
+    },
+    {
+      "afirmacao": "Existe a vulnerabilidade 'Header ausente: Permissions-Policy'.",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"tipo\": \"Header ausente: Permissions-Policy\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Item presente na lista oficial."
+    },
+    {
+      "afirmacao": "A severidade de 'Header ausente: Permissions-Policy' e Baixa, informada pela ferramenta.",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"severidade\": \"Baixa\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Valor do campo severidade do item na lista oficial."
+    },
+    {
+      "afirmacao": "Existe a vulnerabilidade 'CORS permissivo'.",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"tipo\": \"CORS permissivo\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Item presente na lista oficial."
+    },
+    {
+      "afirmacao": "A severidade de 'CORS permissivo' e Media, informada pela ferramenta.",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"severidade\": \"Media\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Valor do campo severidade do item na lista oficial."
+    },
+    {
+      "afirmacao": "Existe a vulnerabilidade 'Metodo HTTP habilitado: PUT'.",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"tipo\": \"Metodo HTTP habilitado: PUT\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Item presente na lista oficial."
+    },
+    {
+      "afirmacao": "A severidade de 'Metodo HTTP habilitado: PUT' e Media, informada pela ferramenta.",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"severidade\": \"Media\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Valor do campo severidade do item na lista oficial."
+    },
+    {
+      "afirmacao": "Existe a vulnerabilidade 'Metodo HTTP habilitado: DELETE'.",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"tipo\": \"Metodo HTTP habilitado: DELETE\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Item presente na lista oficial."
+    },
+    {
+      "afirmacao": "A severidade de 'Metodo HTTP habilitado: DELETE' e Media, informada pela ferramenta.",
+      "tipo": "severidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"severidade\": \"Media\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Valor do campo severidade do item na lista oficial."
+    },
+    {
+      "afirmacao": "Todas as 7 vulnerabilidades sao da categoria Web/API.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"categoria\": \"Web/API\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Todos os itens da lista tem essa categoria."
+    },
+    {
+      "afirmacao": "Todas as 7 vulnerabilidades vieram do scanner HTTP.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"scanner\": \"HTTP\"",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Todos os itens da lista tem esse scanner."
+    },
+    {
+      "afirmacao": "A ferramenta forneceu evidencia nula para os quatro itens de cabecalho ausente.",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "\"evidencia\": null",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Os quatro primeiros itens da lista tem evidencia null."
+    },
+    {
+      "afirmacao": "Evidencia do CORS permissivo: Access-Control-Allow-Origin com valor '*'.",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Access-Control-Allow-Origin: *",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Presente nos cabecalhos GET e OPTIONS."
+    },
+    {
+      "afirmacao": "Evidencia da ferramenta para PUT: 'Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE'.",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Campo evidencia do item na lista oficial."
+    },
+    {
+      "afirmacao": "Evidencia da ferramenta para DELETE: 'Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE'.",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Allow: ,GET,HEAD,PUT,PATCH,POST,DELETE",
+      "fonte_evidencia": "vulnerabilidades",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Campo evidencia do item na lista oficial."
+    },
+    {
+      "afirmacao": "O alvo foi acessado por HTTP no host 0.tcp.sa.ngrok.io, porta 12356.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "--- Requisicao: GET http://0.tcp.sa.ngrok.io:12356 ---",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Registrado no log requests_get."
+    },
+    {
+      "afirmacao": "As respostas analisadas foram obtidas por HTTP.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "--- Requisicao: OPTIONS http://0.tcp.sa.ngrok.io:12356 ---",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "As duas requisicoes registradas usam http://."
+    },
+    {
+      "afirmacao": "A requisicao GET retornou status 200 OK.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Status: 200 OK",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Registrado no log requests_get."
+    },
+    {
+      "afirmacao": "A requisicao OPTIONS retornou status 204 No Content.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Status: 204 No Content",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Registrado no log requests_options."
+    },
+    {
+      "afirmacao": "A resposta GET inclui o cabecalho Feature-Policy restringindo pagamento.",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Feature-Policy: payment 'self'",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Presente nos cabecalhos do GET."
+    },
+    {
+      "afirmacao": "A resposta OPTIONS anuncia os metodos GET, HEAD, PUT, PATCH, POST e DELETE no cabecalho Access-Control-Allow-Methods.",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Presente nos cabecalhos do OPTIONS."
+    },
+    {
+      "afirmacao": "O Dalfox nao reportou XSS nos 20 endpoints testados.",
+      "tipo": "existencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "STDOUT: [\n{}]",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Todos os blocos do Dalfox tem essa saida, sem achados."
+    },
+    {
+      "afirmacao": "O Dalfox retornou apenas '[{}]' para todos os endpoints testados.",
+      "tipo": "evidencia",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "STDOUT: [\n{}]",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Mesma saida em todos os 20 blocos."
+    },
+    {
+      "afirmacao": "Foram descobertos 29 endpoints.",
+      "tipo": "quantidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Total descoberto: 29",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Log endpoints_descobertos."
+    },
+    {
+      "afirmacao": "Foram testados 20 endpoints.",
+      "tipo": "quantidade",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Limite testado: 20",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Log endpoints_descobertos."
+    },
+    {
+      "afirmacao": "O Nmap nao escaneou o alvo.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Nmap done: 0 IP addresses (0 hosts up) scanned in 0.61 seconds",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Saida do Nmap."
+    },
+    {
+      "afirmacao": "O alvo foi passado ao Nmap no formato host:porta.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Comando: nmap -sV -sC -Pn -T4 --open -p 1-10000 0.tcp.sa.ngrok.io:12356",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Comando registrado."
+    },
+    {
+      "afirmacao": "O mosquitto_sub registrou TIMEOUT.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "TIMEOUT atingido.",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Log mosquitto_sub."
+    },
+    {
+      "afirmacao": "O mosquitto_pub terminou com codigo de retorno 14.",
+      "tipo": "outro",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "Return code: 14",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Log mosquitto_pub."
+    },
+    {
+      "afirmacao": "O katana descobriu o endpoint /redirect?to=http.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "http://0.tcp.sa.ngrok.io:12356/redirect?to=http",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Saida do katana."
+    },
+    {
+      "afirmacao": "O Dalfox testou a variante /redirect?to=http.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "--- Dalfox em http://0.tcp.sa.ngrok.io:12356/redirect?to=http ---",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Bloco presente no log do Dalfox."
+    },
+    {
+      "afirmacao": "A variante /redirect?to=https ficou fora do limite testado.",
+      "tipo": "ativo",
+      "classificacao": "suportada",
+      "suportada_pelos_dados": true,
+      "evidencia": "http://0.tcp.sa.ngrok.io:12356/redirect?to=https",
+      "fonte_evidencia": "dados_brutos",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "26a posicao da lista, alem do limite de 20; sem bloco no Dalfox."
+    },
+    {
+      "afirmacao": "A lista de cabecalhos da resposta GET nao inclui CSP, HSTS, Referrer-Policy nem Permissions-Policy.",
+      "tipo": "evidencia",
+      "classificacao": "nao_suportada",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Afirmacao de ausencia: coerente com o log, mas nao ha trecho literal que a confirme."
+    },
+    {
+      "afirmacao": "O cabecalho 'Allow' citado pela ferramenta nao aparece nos logs brutos.",
+      "tipo": "evidencia",
+      "classificacao": "nao_suportada",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Afirmacao de ausencia: coerente com o log, mas nao ha trecho literal que a confirme."
+    },
+    {
+      "afirmacao": "Nenhum endpoint com dados sensiveis foi analisado.",
+      "tipo": "outro",
+      "classificacao": "nao_suportada",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Afirmacao de ausencia sem trecho literal que a confirme."
+    },
+    {
+      "afirmacao": "Nenhum achado de MQTT ou de portas e servicos consta nos dados.",
+      "tipo": "outro",
+      "classificacao": "nao_suportada",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Afirmacao de ausencia sem trecho literal que a confirme."
+    },
+    {
+      "afirmacao": "Risco descrito para 'Header ausente: Content-Security-Policy' (impacto condicional).",
+      "tipo": "impacto",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Impacto em linguagem condicional; nao afirma fato sobre o alvo."
+    },
+    {
+      "afirmacao": "Mitigacao recomendada para 'Header ausente: Content-Security-Policy'.",
+      "tipo": "outro",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Recomendacao."
+    },
+    {
+      "afirmacao": "Risco descrito para 'Header ausente: Strict-Transport-Security' (impacto condicional).",
+      "tipo": "impacto",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Impacto em linguagem condicional; nao afirma fato sobre o alvo."
+    },
+    {
+      "afirmacao": "Mitigacao recomendada para 'Header ausente: Strict-Transport-Security'.",
+      "tipo": "outro",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Recomendacao."
+    },
+    {
+      "afirmacao": "Risco descrito para 'Header ausente: Referrer-Policy' (impacto condicional).",
+      "tipo": "impacto",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Impacto em linguagem condicional; nao afirma fato sobre o alvo."
+    },
+    {
+      "afirmacao": "Mitigacao recomendada para 'Header ausente: Referrer-Policy'.",
+      "tipo": "outro",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Recomendacao."
+    },
+    {
+      "afirmacao": "Risco descrito para 'Header ausente: Permissions-Policy' (impacto condicional).",
+      "tipo": "impacto",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Impacto em linguagem condicional; nao afirma fato sobre o alvo."
+    },
+    {
+      "afirmacao": "Mitigacao recomendada para 'Header ausente: Permissions-Policy'.",
+      "tipo": "outro",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Recomendacao."
+    },
+    {
+      "afirmacao": "Risco descrito para 'CORS permissivo' (impacto condicional).",
+      "tipo": "impacto",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Impacto em linguagem condicional; nao afirma fato sobre o alvo."
+    },
+    {
+      "afirmacao": "Mitigacao recomendada para 'CORS permissivo'.",
+      "tipo": "outro",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Recomendacao."
+    },
+    {
+      "afirmacao": "Risco descrito para 'Metodo HTTP habilitado: PUT' (impacto condicional).",
+      "tipo": "impacto",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Impacto em linguagem condicional; nao afirma fato sobre o alvo."
+    },
+    {
+      "afirmacao": "Mitigacao recomendada para 'Metodo HTTP habilitado: PUT'.",
+      "tipo": "outro",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Recomendacao."
+    },
+    {
+      "afirmacao": "Risco descrito para 'Metodo HTTP habilitado: DELETE' (impacto condicional).",
+      "tipo": "impacto",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Impacto em linguagem condicional; nao afirma fato sobre o alvo."
+    },
+    {
+      "afirmacao": "Mitigacao recomendada para 'Metodo HTTP habilitado: DELETE'.",
+      "tipo": "outro",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Recomendacao."
+    },
+    {
+      "afirmacao": "3 vulnerabilidades confirmadas e 4 nao confirmadas.",
+      "tipo": "outro",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Classificacao do proprio relatorio, referencia ou limitacao; nao e fato sobre o alvo."
+    },
+    {
+      "afirmacao": "Referencias normativas citadas (OWASP IoT Top 10, ETSI EN 303 645).",
+      "tipo": "outro",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Classificacao do proprio relatorio, referencia ou limitacao; nao e fato sobre o alvo."
+    },
+    {
+      "afirmacao": "Tipo de dispositivo, fabricante, modelo e firmware nao determinados.",
+      "tipo": "outro",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Classificacao do proprio relatorio, referencia ou limitacao; nao e fato sobre o alvo."
+    },
+    {
+      "afirmacao": "A ausencia de outras vulnerabilidades nao comprova a ausencia de vulnerabilidades no alvo.",
+      "tipo": "outro",
+      "classificacao": "nao_verificavel",
+      "suportada_pelos_dados": false,
+      "evidencia": "",
+      "fonte_evidencia": "nenhuma",
+      "possivelmente_em_trecho_truncado": false,
+      "justificativa": "Classificacao do proprio relatorio, referencia ou limitacao; nao e fato sobre o alvo."
+    }
+  ],
+  "consistencia_interna": {
+    "quantidade_relatorio_igual_lista_oficial": true,
+    "vulnerabilidades_fora_da_lista_oficial": [],
+    "vulnerabilidades_omitidas": []
+  },
+  "resumo": {
+    "total_afirmacoes": 43,
+    "afirmacoes_suportadas": 39,
+    "afirmacoes_nao_suportadas": 4,
+    "afirmacoes_contraditas": 0,
+    "afirmacoes_nao_verificaveis": 18,
+    "taxa_fidelidade": 0.907
+  }
+}

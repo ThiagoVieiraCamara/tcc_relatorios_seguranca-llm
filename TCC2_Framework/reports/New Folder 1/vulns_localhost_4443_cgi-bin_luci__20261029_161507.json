@@ -1,0 +1,38 @@
+[
+  {
+    "tipo": "Header ausente: Content-Security-Policy",
+    "descricao": "Ausencia de CSP (protecao contra XSS e injection)",
+    "severidade": "Alta",
+    "categoria": "Web/API",
+    "scanner": "HTTP",
+    "evidencia": null,
+    "detectado_em": "2026-10-29T16:08:08.514980"
+  },
+  {
+    "tipo": "Header ausente: Strict-Transport-Security",
+    "descricao": "Ausencia de HSTS (vulneravel a downgrade attack)",
+    "severidade": "Media",
+    "categoria": "Web/API",
+    "scanner": "HTTP",
+    "evidencia": null,
+    "detectado_em": "2026-10-29T16:08:08.515000"
+  },
+  {
+    "tipo": "Header ausente: Referrer-Policy",
+    "descricao": "Ausencia de Referrer-Policy",
+    "severidade": "Baixa",
+    "categoria": "Web/API",
+    "scanner": "HTTP",
+    "evidencia": null,
+    "detectado_em": "2026-10-29T16:08:08.515005"
+  },
+  {
+    "tipo": "Header ausente: Permissions-Policy",
+    "descricao": "Ausencia de Permissions-Policy (ex-Feature-Policy)",
+    "severidade": "Baixa",
+    "categoria": "Web/API",
+    "scanner": "HTTP",
+    "evidencia": null,
+    "detectado_em": "2026-10-29T16:08:08.515009"
+  }
+]

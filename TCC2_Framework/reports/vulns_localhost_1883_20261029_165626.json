@@ -1,0 +1,20 @@
+[
+  {
+    "tipo": "Publicacao Anonima",
+    "descricao": "Broker aceita publicacoes sem autenticacao",
+    "severidade": "Alta",
+    "categoria": "IoT/MQTT",
+    "scanner": "MQTT",
+    "evidencia": null,
+    "detectado_em": "2026-10-29T16:55:57.465410"
+  },
+  {
+    "tipo": "MQTT sem TLS",
+    "descricao": "Broker em porta padrao 1883 (sem criptografia). MQTT seguro usa 8883.",
+    "severidade": "Media",
+    "categoria": "Transporte",
+    "scanner": "MQTT",
+    "evidencia": null,
+    "detectado_em": "2026-10-29T16:55:57.465446"
+  }
+]
