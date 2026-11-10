@@ -44,18 +44,18 @@ Alvo ──► Módulos de verificação ──► Achados + dados brutos ──
 |---|---|
 | Python | 3.14.4 |
 | Nmap | 7.99 |
-| Katana | <!-- AJUSTAR --> |
-| Dalfox | <!-- AJUSTAR --> |
+| Katana | 1.5.0 |
+| Dalfox | 2.12.0 |
 | Mosquitto (clientes e broker) | 2.1.2 |
-| Docker | <!-- AJUSTAR --> |
+| Docker | 29.4.1 |
 
 As bibliotecas Python estão em `requirements.txt`.
 
 ## Instalação
 
 ```bash
-git clone https://github.com/<usuario>/<repositorio>.git
-cd <repositorio>
+git clone https://github.com/ThiagoVieiraCamara/tcc_relatorios_seguranca-llm.git
+cd tcc_relatorios_seguranca-llm
 python -m venv .venv
 source .venv/bin/activate        # no Windows: .venv\Scripts\activate
 pip install -r requirements.txt
@@ -81,25 +81,16 @@ O modelo usado e a pasta onde os relatórios são salvos estão definidos em `sr
 
 ## Como executar
 
-<!-- AJUSTAR: troque pelo comando real de execução do protótipo -->
 ```bash
-python src/main.py --alvo <endereco_do_alvo>
+python main.py
 ```
+colocar o link do alvo e selecionar alguma das opcoes (apenas "todos" disponivel) 
 
 A execução gera, na pasta definida em `REPORTS_DIR`:
 
 - `relatorio_<alvo>_<data>.txt`: o relatório técnico gerado pelo LLM;
 - `vulns_<alvo>_<data>.json`: os achados consolidados dos módulos;
 - `avaliacao_<alvo>_<data>.json`: a avaliação de fidelidade factual do relatório.
-
-### Broker MQTT inseguro
-
-O cenário complementar usa um *broker* Mosquitto configurado sem autenticação e sem TLS:
-
-```bash
-cd ambientes/broker_mqtt
-docker compose up -d
-```
 
 > Execute as ferramentas apenas contra ambientes próprios ou com autorização expressa. Os alvos usados neste trabalho são intencionalmente vulneráveis e foram executados em ambiente controlado.
 
@@ -109,7 +100,7 @@ docker compose up -d
 |---|---|---|---|
 | OWASP IoTGoat | v1.0 | Docker e QEMU | `https://localhost:4443/cgi-bin/luci/` |
 | OWASP Juice Shop | v20.3.0 | Contêiner Docker, exposto por túnel TCP do ngrok | `http://0.tcp.sa.ngrok.io:12356` |
-| Broker MQTT | Mosquitto 2.1.2 | Contêiner Docker, sem autenticação e sem TLS | <!-- AJUSTAR: host e porta --> |
+| Broker MQTT | Mosquitto 2.1.2 | Contêiner Docker, sem autenticação e sem TLS | `localhost:3000` |
 
 Os conjuntos de referência em `ground_truth/` foram elaborados a partir da documentação oficial de cada projeto ([IoTGoat](https://github.com/OWASP/IoTGoat) e [OWASP Juice Shop](https://owasp.org/www-project-juice-shop/)). Cada arquivo indica as fontes, o escopo de detecção e a evidência esperada de cada registro.
 
@@ -117,9 +108,9 @@ Os conjuntos de referência em `ground_truth/` foram elaborados a partir da docu
 
 | Modelo | Identificador | Acesso | Avaliador do relatório |
 |---|---|---|---|
-| Gemini | <!-- AJUSTAR: valor de GEMINI_MODEL --> | API Google GenAI, pelo protótipo | O próprio Gemini |
+| Gemini | `gemini-2.5-flash-lite` | API Google GenAI, pelo protótipo | O próprio Gemini |
 | Claude | `claude-opus-5-5` | Interface do Claude | O próprio Claude |
-| DeepSeek | V4.1-Flash-1017 | Interface do DeepSeek | Claude |
+| DeepSeek | `V4.1-Flash-1017` | Interface do DeepSeek | Claude |
 
 Os três modelos receberam o mesmo *prompt* e os mesmos dados de entrada. Apenas os relatórios do Gemini foram gerados pelo protótipo; os do Claude e do DeepSeek foram gerados nas plataformas de cada serviço e estão salvos em `resultados/`. Os parâmetros de geração foram os padrões de cada serviço.
 
@@ -130,13 +121,6 @@ A fidelidade factual é calculada como:
 ```
 Fidelidade = suportadas / (suportadas + não suportadas + contraditas)
 ```
-
-As afirmações não verificáveis ficam fora do denominador. Para recalcular as taxas diretamente das listas de afirmações dos arquivos de avaliação:
-
-```bash
-python scripts/recalcular_fidelidade.py resultados/*/avaliacoes/*.json
-```
-
 O script conta os itens da lista `afirmacoes` de cada arquivo, em vez de usar o resumo calculado pelo próprio modelo avaliador.
 
 | Cenário | Modelo | Suportadas | Não suportadas | Contraditas | Não verificáveis | Fidelidade |
@@ -150,7 +134,7 @@ O script conta os itens da lista `afirmacoes` de cada arquivo, em vez de usar o 
 
 ## Limitações conhecidas
 
-- **Nmap:** nas execuções do TCC, o alvo foi passado como URL completa ou no formato `host:porta`, que o Nmap não aceita. Por isso nenhum host foi escaneado nos dois ambientes principais. <!-- AJUSTAR se corrigir e rodar de novo -->
+- **Nmap:** nas execuções do TCC, o alvo foi passado como URL completa ou no formato `host:porta`, que o Nmap não aceita. Por isso nenhum host foi escaneado nos dois ambientes principais. 
 - **MQTT:** o módulo funcionou no *broker* dedicado, mas não chegou aos alvos principais, porque o endereço foi dividido de forma incorreta.
 - **IoTGoat:** a interface web responde `403 Forbidden` com a página de login a requisições sem sessão autenticada. Os cabeçalhos analisados correspondem a essa página.
 - **Avaliadores:** os relatórios não foram avaliados por um único modelo. O Gemini avaliou o próprio relatório, e o Claude avaliou o seu e o do DeepSeek, o que limita a comparação direta entre os modelos.
@@ -163,4 +147,4 @@ CAMARA, Thiago Vieira. Relatórios de segurança com modelos de linguagem: anál
 
 ## Licença
 
-<!-- AJUSTAR: ex. MIT, conforme escolhido ao criar o repositório -->
+MIT
